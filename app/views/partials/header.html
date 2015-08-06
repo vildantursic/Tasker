@@ -1,19 +1,16 @@
 <md-content>
-  <md-toolbar>
+  <md-toolbar ng-controller="headerCtrl">
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Settings">
+      <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Settings">
         <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
       </md-button>
       <h2>
-        <span>Toolbar with Icon Buttons</span>
+        <span>TASK MANAGER</span>
       </h2>
       <span flex></span>
-      <md-button ui-sref="home" class="md-icon-button" aria-label="Favorite">
-        home
-      </md-button>
-      <md-button ui-sref="about" class="md-icon-button" aria-label="More">
-        about
-      </md-button>
+      <md-button ui-sref="home">home</md-button>
+      <md-button ui-sref="projects">projects</md-button>
+      <md-button ng-click="showLogin($event)">login</md-button>
     </div>
   </md-toolbar>
 </md-content>

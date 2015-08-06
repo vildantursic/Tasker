@@ -11,6 +11,7 @@
 <body ng-app="app">
 
 	<div ng-include="'views/partials/header.html'"></div>
+	<div ng-include="'views/partials/sidebar.html'"></div>
 
 	<div ui-view></div>
 
@@ -24,6 +25,12 @@
 	<script type="text/javascript" src="scripts/js/app/app.js"></script>
 	<script type="text/javascript" src="scripts/js/app/routing.js"></script>
 	<script type="text/javascript" src="scripts/js/main.min.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="scripts/js/app/controllers/headerCtrl.js"></script>
+	<script type="text/javascript" src="scripts/js/app/controllers/projectCtrl.js"></script>
+	<script type="text/javascript" src="scripts/js/app/controllers/taskCtrl.js"></script>
+	<script type="text/javascript" src="scripts/js/app/controllers/homeCtrl.js"></script>
 
 </body>
 </html>

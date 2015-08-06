@@ -31,7 +31,7 @@ gulp.task('index', function() {
 });
 
 gulp.task('angular', function() {
-  gulp.src("app/scripts/js/app/*.js")
+  gulp.src("app/scripts/js/app/**/*.js")
   .pipe(gulp.dest("dist/scripts/js/app"))
 	.pipe(reload({stream:true}));
 });

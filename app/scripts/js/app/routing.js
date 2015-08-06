@@ -11,8 +11,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/",
       templateUrl: "views/home.html"
     })
-    .state('about', {
-      url: "/about",
-      templateUrl: "views/about.html"
+    .state('projects', {
+      url: "/projects",
+      templateUrl: "views/projects.html",
+      controller: "projectCtrl"
+    })
+    .state('tasks', {
+      url: "/tasks/:id",
+      templateUrl: "views/tasks.html",
+      controller: "taskCtrl"
     });
 });

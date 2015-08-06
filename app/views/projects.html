@@ -1,0 +1,16 @@
+<div layout="column" class="projectlist">
+  <div layout="row">
+    <div flex>
+      <md-whiteframe ng-repeat="project in projects" class="md-whiteframe-z3" layout>
+        <div>{{project.name}}</div>
+        <div>{{project.status}}</div>
+        <div>{{project.email}}</div>
+
+        <section class="buttons" layout="row" layout-sm="column" layout-align="center center">
+          <md-button class="md-raised" ui-sref="tasks({id:'13'})">go</md-button>
+          <md-button class="md-raised md-primary" ng-click="showEditProject($event)">edit</md-button>
+        </section>
+      </md-whiteframe>
+    </div>
+  </div>
+</div>

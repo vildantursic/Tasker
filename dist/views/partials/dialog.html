@@ -1,0 +1,33 @@
+<md-dialog aria-label="login">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>LOGIN</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div>
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.email" type="email">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input ng-model="user.pass">
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="answer('cancel')" class="md-primary">
+     cancel
+    </md-button>
+    <md-button ng-click="answer('login')" class="md-primary">
+      login
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

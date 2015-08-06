@@ -2,3 +2,52 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+footer {
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	bottom: 0;
+	background: #0288D1;
+}
+
+.home md-card {
+  height: 500px;
+	display: inline-block;
+	overflow: hidden;
+}
+.home md-card .md-actions {
+	
+}
+
+.projectlist md-whiteframe {
+	background: #fff;
+	margin: 20px;
+	padding: 20px;
+	height: 200px;
+	width: 30%;
+	float: left;
+	overflow: hidden;
+}
+.projectlist .buttons {
+
+}
+
+.tasktlist md-whiteframe {
+	background: #fff;
+	margin: 20px;
+	padding: 20px;
+	height: 100px;
+	overflow: hidden;
+}
+.tasktlist .buttons {
+	float: right;
+}
+
+.progress h4 {
+  margin: 10px 0;
+}
+.progress md-progress-linear {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
