@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router','ngMaterial'])
+var app = angular.module('app', ['ui.router','ngMaterial', 'nvd3'])
 
 app.config(function($mdThemingProvider) {
 })
