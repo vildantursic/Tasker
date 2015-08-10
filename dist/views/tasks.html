@@ -1,15 +1,21 @@
 <div layout="column" class="tasktlist">
   <div layout="row">
-    <div flex>
+    <div flex layout-margin>
       <md-whiteframe ng-repeat="task in tasks" class="md-whiteframe-z3" layout>
-        <div>{{task.name}}</div>
-        <div>{{task.status}}</div>
-        <div>{{task.email}}</div>
+        <div class="task">
 
-        <section class="buttons" layout="row" layout-sm="column" layout-align="center center">
-          <md-button class="md-raised md-primary" ng-click="showEditTask($event)">edit</md-button>
-          <md-button class="md-raised md-warn" ng-click="deleteTask(task._id)">delete</md-button>
-        </section>
+          <div class="content">
+            <div><strong>Name</strong> {{task.name}}</div>
+            <div><strong>Status</strong> {{task.status}}</div>
+            <div><strong>Email</strong> {{task.email}}</div>
+          </div>
+
+          <section class="buttons">
+            <md-button class="md-raised md-primary" ng-click="showEditTask($event, task._id)">edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteTask(task._id)">delete</md-button>
+          </section>
+
+        </div>
       </md-whiteframe>
     </div>
   </div>

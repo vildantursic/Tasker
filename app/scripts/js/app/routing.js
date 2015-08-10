@@ -15,11 +15,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('projects', {
       url: "/projects",
       templateUrl: "views/projects.html",
-      controller: "projectCtrl"
+      controller: "projectsCtrl"
+    })
+    .state('users', {
+      url: "/users",
+      templateUrl: "views/users.html",
+      controller: "usersCtrl"
     })
     .state('tasks', {
       url: "/tasks/:id",
       templateUrl: "views/tasks.html",
-      controller: "taskCtrl"
+      controller: "tasksCtrl"
     });
 });

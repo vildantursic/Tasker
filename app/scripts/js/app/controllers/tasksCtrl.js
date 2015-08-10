@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('taskCtrl', function ($scope, $mdDialog, $http, $stateParams) {
+app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams) {
 
   $scope.showEditTask = function(ev, id) {
 

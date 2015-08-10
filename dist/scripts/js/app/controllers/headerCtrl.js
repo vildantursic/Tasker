@@ -2,7 +2,7 @@ var app = angular.module('app');
 
 app.controller('headerCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog) {
 
-  $scope.toggleRight = buildToggler('right');
+  $scope.toggleRight = buildToggler('left');
 
   function buildToggler(navID) {
     var debounceFn =  $mdUtil.debounce(function(){

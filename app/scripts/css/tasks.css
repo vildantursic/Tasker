@@ -1,0 +1,26 @@
+.tasktlist md-whiteframe {
+	background: #fff;
+  margin: 20px;
+	padding: 20px;
+	height: 110px;
+}
+
+.tasktlist .task {
+  width: 100%;
+  height: 100%;
+	overflow: hidden;
+  display: inline-block;
+}
+
+.tasktlist .content {
+  float: left;
+  width: 50%;
+}
+.tasktlist .content>div{
+  margin-bottom: 5px;
+}
+
+.tasktlist .buttons {
+  width: 50%;
+  float: right;
+}

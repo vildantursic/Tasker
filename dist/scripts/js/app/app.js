@@ -20,11 +20,11 @@ app.controller('statusCtrl', ['$scope', '$interval', function($scope, $interval)
   }, 7200, 0, true);
 }]);
 
-app.controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
   $scope.name = "Vildan";
 
   $scope.close = function () {
-    $mdSidenav('right').close();
+    $mdSidenav('left').close();
   };
 });
 
