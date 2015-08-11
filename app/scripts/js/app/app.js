@@ -30,6 +30,7 @@ app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
 
 
 function DialogController($scope, $mdDialog) {
+
   $scope.hide = function() {
     $mdDialog.hide();
   };

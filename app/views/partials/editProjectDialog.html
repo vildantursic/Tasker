@@ -1,4 +1,4 @@
-<md-dialog aria-label="project">
+<md-dialog aria-label="project" ng-controller="projectsCtrl">
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -14,11 +14,11 @@
       <div flex>
         <md-input-container>
           <label>Name</label>
-          <input ng-model="task.name">
+          <input ng-model="projectEdit.name">
         </md-input-container>
         <md-input-container>
-          <label>Company</label>
-          <input ng-model="task.company">
+          <label>Email</label>
+          <input ng-model="projectEdit.email">
         </md-input-container>
       </div>
       <div flex="5">
@@ -26,11 +26,11 @@
       <div flex>
         <md-input-container>
           <label>Date</label>
-          <input ng-model="task.date">
+          <input ng-model="projectEdit.date">
         </md-input-container>
         <md-input-container>
           <label>Status</label>
-          <input ng-model="task.status">
+          <input ng-model="projectEdit.status">
         </md-input-container>
       </div>
     </div>
@@ -42,7 +42,7 @@
     </div>
   </md-dialog-content>
   <div class="md-actions" layout="row">
-    <md-button ng-click="answer('cancel')" class="md-warn">
+    <md-button ng-click="answer('cancel', projectEdit)" class="md-warn">
      cancel
     </md-button>
     <md-button ng-click="answer('save')" class="md-raised md-primary">

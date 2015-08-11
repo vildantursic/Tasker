@@ -1,23 +1,17 @@
 var app = angular.module('app');
 
-app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams) {
+app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $state) {
 
-  $scope.showEditTask = function(ev, id) {
+  $scope.request = function (){
 
-    console.log(id);
-
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: 'views/partials/editTaskDialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-    })
-    .then(function(answer) {
-      console.log('You chose "' + answer + '".');
-    }, function() {
-      console.log('You cancelled the dialog.');
+    $http(get).success(function(data){
+      //console.log(data);
+      $scope.tasks = data;
+    }).error(function(){
+      alert("Failed");
     });
-  };
+
+  }
 
   var get = {
     method: 'GET',
@@ -31,7 +25,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams) {
       "Access-Control-Allow-Origin": "*"
     }
   }
-  getTasks();
+  $scope.request(get);
 
   $scope.deleteTask = function(id){
 
@@ -54,18 +48,70 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams) {
       alert("Failed");
     });
 
-    getTasks();
+    //$scope.request(get);
+
+    setTimeout(function(){
+      //$window.location.reload();
+      $state.reload();
+    }, 2000);
+
   }
 
-  function getTasks(){
+  $scope.showEditTask = function(ev, id) {
 
-    $http(get).success(function(data){
-      //console.log(data);
-      $scope.tasks = data;
-    }).error(function(){
-      alert("Failed");
+    for (var i = 0; i < $scope.tasks.length; i++) {
+      angular.forEach($scope.tasks[i], function(value, key) {
+          if(value == id){
+            $scope.taskEdit = $scope.tasks[i];
+          }
+      });
+    }
+
+    $mdDialog.show({
+      controller: DialogController,
+      scope: $scope.$new(),
+      templateUrl: 'views/partials/editTaskDialog.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+    })
+    .then(function(answer) {
+      console.log('You chose "' + answer + '".');
+    }, function() {
+      console.log('You cancelled the dialog.');
     });
+  };
 
-  }
+  $scope.showDeleteTask = function(ev, id) {
 
+    for (var i = 0; i < $scope.tasks.length; i++) {
+      angular.forEach($scope.tasks[i], function(value, key) {
+          if(value == id){
+            $scope.taskEdit = $scope.tasks[i];
+          }
+      });
+    }
+
+    $mdDialog.show({
+      controller: DialogController,
+      scope: $scope.$new(),
+      templateUrl: 'views/partials/deleteTaskDialog.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+    })
+    .then(function(answer) {
+      if(answer == "yes"){
+        $scope.deleteTask($scope.taskEdit._id);
+      }
+    }, function() {
+      console.log('You cancelled the dialog.');
+    });
+  };
+
+});
+
+app.config( function($mdThemingProvider){
+  // Configure a dark theme with primary foreground yellow
+  $mdThemingProvider.theme('docs-dark', 'default')
+  .primaryPalette('blue')
+  .dark();
 });

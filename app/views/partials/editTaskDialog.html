@@ -2,7 +2,7 @@
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2>EDIT TASK #</h2>
+      <h2>EDIT TASK #{{taskEdit._id}}</h2>
       <span flex></span>
       <md-button class="md-icon-button" ng-click="answer('close')">
         <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
@@ -14,11 +14,11 @@
       <div flex>
         <md-input-container>
           <label>Name</label>
-          <input ng-model="task.name">
+          <input ng-model="taskEdit.name">
         </md-input-container>
         <md-input-container>
           <label>Duration</label>
-          <input ng-model="task.duration">
+          <input ng-model="taskEdit.duration">
         </md-input-container>
       </div>
       <div flex="5">
@@ -26,11 +26,11 @@
       <div flex>
         <md-input-container>
           <label>Date</label>
-          <input ng-model="task.date">
+          <input type="date" ng-model="taskEdit.submissionDate">
         </md-input-container>
         <md-input-container>
           <label>Status</label>
-          <input ng-model="task.status">
+          <input ng-model="taskEdit.status">
         </md-input-container>
       </div>
     </div>

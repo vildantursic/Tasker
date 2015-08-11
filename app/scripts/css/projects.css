@@ -25,12 +25,12 @@
 }
 
 .add {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 }
 
-.add .md-button .md-fab {
+.md-button.md-fab {
 	z-index: 20;
 	position: absolute;
 	margin-top: -30px;
