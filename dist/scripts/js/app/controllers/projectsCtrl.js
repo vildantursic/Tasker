@@ -2,6 +2,14 @@ var app = angular.module('app');
 
 app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate) {
 
+  // loading screen
+  $scope.status = true;
+
+  $scope.change = function (){
+    $scope.status = false;
+  }
+  // ******************
+
   $scope.toastPosition = {
     bottom: false,
     top: true,
@@ -26,7 +34,8 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
   $scope.request = function (req) {
 
     $http(req).success(function(data){
-      $scope.projects = data;
+      $scope.projects = data.rows;
+      $scope.change();
     }).error(function(){
       alert("Failed");
     });
@@ -35,7 +44,7 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pos',
+    url: 'http://localhost:8080/api/pg',
     async: true,
     crossDomain: true,
     dataType: "jsonp",

@@ -19,3 +19,8 @@ body {
   padding-top: 10px;
   margin-bottom: 20px;
 }
+
+.loading {
+  margin-left: 50%;
+  margin-top: 300px;
+}

@@ -1,32 +1,70 @@
-<div>
-  <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-    <div flex="33">
-      <md-input-container>
-        <label>Search</label>
-        <input ng-model="search">
-      </md-input-container>
-    </div>
-  </md-content>
+
+<md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
+  <div flex="33">
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="search">
+    </md-input-container>
+  </div>
+</md-content>
+
+<div class="loading" ng-show="status">
+  <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
 </div>
 
 <div layout="column" class="tasktlist">
   <div layout="row">
-    <div flex layout-margin>
+    <div flex="33" ng-hide="status" class="addTask">
+      <md-dialog-content>
+        <div layout="row" layout-wrap>
+          <div flex>
+            <md-input-container>
+              <label>Name</label>
+              <input ng-model="projectEdit.name">
+            </md-input-container>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="projectEdit.email">
+            </md-input-container>
+          </div>
+          <div flex="5">
+          </div>
+          <div flex>
+            <md-input-container>
+              <label>Date</label>
+              <input ng-model="projectEdit.date">
+            </md-input-container>
+            <md-input-container>
+              <label>Status</label>
+              <input ng-model="projectEdit.status">
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row">
+          <div flex class="progress" ng-controller="statusCtrl">
+            <label>Progress</label>
+            <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear>
+          </div>
+        </div>
+      </md-dialog-content>
+    </div>
+    <div flex="66" layout-margin>
       <md-whiteframe ng-repeat="task in tasks | filter: search" class="md-whiteframe-z3" layout>
         <div class="task">
 
           <div class="content">
-            <div><strong>Name</strong> {{task.name}}</div>
-            <div><strong>Status</strong> {{task.status}}</div>
-            <div><strong>Email</strong> {{task.email}}</div>
+            <div><strong>Name</strong> {{task.task}}</div>
+            <div><strong>Company</strong> {{task.company}}</div>
+            <div><strong>Email</strong> {{task.username}}</div>
           </div>
 
           <section class="buttons">
-            <md-button class="md-raised md-primary" ng-click="showEditTask($event, task._id)">edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="showDeleteTask($event, task._id)">delete</md-button>
+            <md-button class="md-raised md-primary" ng-click="showEditTask($event, task.id)">edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="showDeleteTask($event, task.id)">delete</md-button>
           </section>
 
         </div>
+        <div class="status-{{task.status}}"></div>
       </md-whiteframe>
     </div>
   </div>

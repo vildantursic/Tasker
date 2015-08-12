@@ -24,12 +24,6 @@
   width: 100%;
 }
 
-.add {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-}
-
 .md-button.md-fab {
 	z-index: 20;
 	position: absolute;
@@ -44,4 +38,14 @@
 	overflow: hidden;
 	transition: .2s linear;
 	transition-property: background-color,box-shadow;
+}
+
+.projects {
+	width: 50%;
+	float: right;
+}
+
+.addProject {
+	background: #84ffff;
+	padding: 20px;
 }

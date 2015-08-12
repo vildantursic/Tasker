@@ -14,13 +14,42 @@
 
 .tasktlist .content {
   float: left;
-  width: 50%;
+  width: 80%;
 }
 .tasktlist .content>div{
   margin-bottom: 5px;
 }
 
 .tasktlist .buttons {
-  width: 50%;
+  width: 20%;
   float: right;
+}
+
+.tasktlist .status-Open{
+	background: #8BC34A;
+	width: 15px;
+}
+
+.tasktlist .status-Closed{
+	background: #F44336;
+	width: 15px;
+}
+
+.taskEdit {
+	width: 900px;
+}
+
+.taskEdit md-input-container {
+	width: 100%;
+}
+
+.taskEdit .note {
+	width: 100%;
+  height: 200px;
+  word-break: break-word;
+}
+
+.addTasks {
+	background: #84ffff;
+	padding: 20px;
 }

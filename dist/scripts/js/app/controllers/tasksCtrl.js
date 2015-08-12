@@ -2,11 +2,20 @@ var app = angular.module('app');
 
 app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $state) {
 
+  // loading screen
+  $scope.status = true;
+
+  $scope.change = function (){
+    $scope.status = false;
+  }
+  // ******************
+
   $scope.request = function (){
 
     $http(get).success(function(data){
       //console.log(data);
-      $scope.tasks = data;
+      $scope.tasks = data.rows;
+      $scope.change();
     }).error(function(){
       alert("Failed");
     });
@@ -15,7 +24,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pos',
+    url: 'http://localhost:8080/api/pg',
     async: true,
     crossDomain: true,
     dataType: "jsonp",

@@ -1,60 +1,62 @@
-<div layout="column" class="projectlist">
-  <div layout="row" layout-wrap>
-    <div ng-repeat="project in projects" flex="33">
-      <md-whiteframe class="md-whiteframe-z3" layout>
-        <div class="proj">
-
-          <div class="content">
-            <div><strong>Name</strong> {{project.name}}</div>
-            <div><strong>Status</strong> {{project.status}}</div>
-            <div><strong>Email</strong> {{project.email}}</div>
-          </div>
-
-          <section class="buttons">
-            <md-button class="md-raised" ui-sref="tasks({id:'13'})">go</md-button>
-            <md-button class="md-raised md-primary" ng-click="showEditProject($event, project._id)">edit</md-button>
-          </section>
-
-        </div>
-      </md-whiteframe>
-    </div>
-  </div>
+<div class="loading" ng-show="status">
+  <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
 </div>
 
-<div class="add">
-  <md-button ng-click="addProject(projectAdd)" class="md-fab md-primary" aria-label="Use Android">
-    <md-icon md-svg-src="img/icons/android.svg"></md-icon>
-  </md-button>
-  <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-    <div flex="33">
-      <md-input-container>
-        <label>Name</label>
-        <input ng-model="projectAdd.name">
-      </md-input-container>
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="projectAdd.email" type="email">
-      </md-input-container>
+<div layout="column" class="projectlist">
+  <div layout="row" layout-wrap>
+    <div ng-hide="status" flex="33" class="addProject">
+      <md-dialog-content>
+        <div layout="row" layout-wrap>
+          <div flex>
+            <md-input-container>
+              <label>Name</label>
+              <input ng-model="projectEdit.name">
+            </md-input-container>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="projectEdit.email">
+            </md-input-container>
+          </div>
+          <div flex="5">
+          </div>
+          <div flex>
+            <md-input-container>
+              <label>Date</label>
+              <input ng-model="projectEdit.date">
+            </md-input-container>
+            <md-input-container>
+              <label>Status</label>
+              <input ng-model="projectEdit.status">
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row">
+          <md-button class="md-fab md-primary" aria-label="Use Android">
+            <md-icon md-svg-src="img/icons/android.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-dialog-content>
     </div>
-    <div flex="33">
-      <md-input-container>
-        <label>Status</label>
-        <input ng-model="projectAdd.status">
-      </md-input-container>
-      <md-input-container>
-        <label>test</label>
-        <input ng-model="test.test">
-      </md-input-container>
+    <div flex="66" class="scrolling">
+      <div class="projects" ng-repeat="project in projects">
+        <md-whiteframe class="md-whiteframe-z3" layout>
+          <div class="proj">
+
+            <div class="content">
+              <div><strong>Name</strong> {{project.project}}</div>
+              <div><strong>Status</strong> {{project.status}}</div>
+              <div><strong>Email</strong> {{project.company}}</div>
+            </div>
+
+            <section class="buttons">
+              <md-button class="md-raised" ui-sref="tasks({id:'13'})">go</md-button>
+              <md-button class="md-raised md-primary" ng-click="showEditProject($event, project._id)">edit</md-button>
+            </section>
+
+          </div>
+        </md-whiteframe>
+      </div>
     </div>
-    <div flex="33">
-      <md-input-container>
-        <label>test</label>
-        <input ng-model="test.test">
-      </md-input-container>
-      <md-input-container>
-        <label>test</label>
-        <input ng-model="test.test">
-      </md-input-container>
-    </div>
-  </md-content>
+
+  </div>
 </div>
