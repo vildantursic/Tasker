@@ -1,6 +1,10 @@
 var app = angular.module('app');
 
-app.controller('headerCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog) {
+app.controller('headerCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog, $state, $location) {
+  //
+  // $scope.currentPath = $location.path();
+  //
+  // console.log( $scope.currentPath +"///"+ $location.path())
 
   $scope.toggleRight = buildToggler('left');
 

@@ -1,17 +1,42 @@
-<md-content>
-  <md-toolbar ng-controller="headerCtrl">
+<md-content ng-controller="headerCtrl" ng-hide="currentPath === '/login'">
+  <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Settings">
-        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-      </md-button>
+      <img class="logo" src="/images/icons/tm-logo.png" alt="" />
       <h2>
         <span>TASK MANAGER</span>
       </h2>
       <span flex></span>
-      <md-button ui-sref="home">home</md-button>
-      <md-button ui-sref="projects">projects</md-button>
-      <md-button ui-sref="users">users</md-button>
-      <md-button ng-click="showLogin($event)">login</md-button>
+      <md-button ui-sref="home" class="md-icon-button" aria-label="Progress" hide-sm>
+        <md-tooltip>
+          Progress
+        </md-tooltip>
+        <img src="images/icons/tm-progress.png"></img>
+      </md-button>
+      <md-button ui-sref="projects" class="md-icon-button" aria-label="Projects" hide-sm>
+        <md-tooltip>
+          Projects
+        </md-tooltip>
+        <img src="images/icons/tm-projects.png"></img>
+      </md-button>
+      <md-button ui-sref="users" class="md-icon-button" aria-label="Users" hide-sm>
+        <md-tooltip>
+          Users
+        </md-tooltip>
+        <img src="images/icons/tm-user.png"></img>
+      </md-button>
+      <md-button ui-sref="login" class="md-icon-button" aria-label="Logout" hide-sm>
+        <md-tooltip>
+          Logout
+        </md-tooltip>
+        <img src="images/icons/tm-logout.png"></img>
+      </md-button>
+
+      <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Menu" hide-lg hide-md hide-gt-lg hide-gt-md>
+        <md-tooltip>
+          Menu
+        </md-tooltip>
+        <img src="images/icons/tm-menu.png"></img>
+      </md-button>
     </div>
   </md-toolbar>
 </md-content>

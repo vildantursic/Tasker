@@ -1,6 +1,9 @@
 var app = angular.module('app', ['ui.router','ngMaterial', 'nvd3'])
 
 app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+    .accentPalette('orange');
 })
 
 app.controller('statusCtrl', ['$scope', '$interval', function($scope, $interval) {
@@ -22,7 +25,6 @@ app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $mdSidenav('left').close();
   };
 });
-
 
 function DialogController($scope, $mdDialog) {
 

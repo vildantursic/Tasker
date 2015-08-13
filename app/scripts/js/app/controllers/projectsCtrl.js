@@ -44,7 +44,7 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pg',
+    url: 'http://localhost:8080/api/pg/projects',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
