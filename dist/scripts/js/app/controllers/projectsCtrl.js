@@ -2,6 +2,9 @@ var app = angular.module('app');
 
 app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate) {
 
+  $scope.fruitNames = ['User1', 'User2', 'User3'];
+  $scope.readonly = false;
+
   // loading screen
   $scope.status = true;
 
@@ -44,13 +47,13 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pg/projects',
+    url: 'http://192.168.0.3:8080/api/pg/projects',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
     headers: {
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      //"Access-Control-Allow-Headers": "Content-Type",
+      //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Origin": "*"
     }
   }
@@ -63,14 +66,14 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
     var post = {
       method: 'POST',
-      url: 'http://localhost:8080/api/pos',
+      url: 'http://192.168.0.3:8080/api/pos',
       async: true,
       crossDomain: true,
       data: {name: data.name, status: data.status, email: data.email},
       dataType: "jsonp",
       headers: {
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        //"Access-Control-Allow-Headers": "Content-Type",
+        //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Origin": "*"
       }
     }
@@ -111,14 +114,14 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
         var post = {
           method: 'PUT',
-          url: 'http://localhost:8080/api/pos/' + $scope.projectEdit._id,
+          url: 'http://192.168.0.3:8080/api/pos/' + $scope.projectEdit._id,
           async: true,
           crossDomain: true,
           data: {name: $scope.projectEdit.name, status: $scope.projectEdit.status, email: $scope.projectEdit.email},
           dataType: "jsonp",
           headers: {
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            //"Access-Control-Allow-Headers": "Content-Type",
+            //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
             "Access-Control-Allow-Origin": "*"
           }
         }

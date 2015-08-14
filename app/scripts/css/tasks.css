@@ -2,7 +2,7 @@
 	background: #fff;
   margin: 20px;
 	padding: 20px;
-	height: 110px;
+	height: 150px;
 }
 
 .taskslist .task {
@@ -22,6 +22,10 @@
 
 .taskslist .buttons {
   width: 20%;
+  float: right;
+}
+
+.taskslist .buttons md-button{
   float: right;
 }
 

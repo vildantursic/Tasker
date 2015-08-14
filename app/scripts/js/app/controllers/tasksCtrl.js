@@ -24,7 +24,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pg',
+    url: 'http://localhost:8080/api/pg/cashed',
     async: true,
     crossDomain: true,
     dataType: "jsonp",

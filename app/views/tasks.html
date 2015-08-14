@@ -59,6 +59,12 @@
             <div><strong>Name</strong> {{task.task}}</div>
             <div><strong>Company</strong> {{task.company}}</div>
             <div><strong>Email</strong> {{task.username}}</div>
+
+            <div class="progress" ng-controller="statusCtrl">
+              <label>Progress</label>
+              <!-- <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear> -->
+              <md-progress-linear md-mode="determinate" value="{{taskEdit.percent_completed}}"></md-progress-linear>
+            </div>
           </div>
 
           <section class="buttons">
@@ -68,6 +74,7 @@
               </md-tooltip>
               <img src="images/icons/tm-pencil.png"></img>
             </md-button>
+            <br>
             <md-button ng-click="showDeleteTask($event, task.id)" class="md-icon-button md-primary" aria-label="Settings">
               <md-tooltip>
                 Delete

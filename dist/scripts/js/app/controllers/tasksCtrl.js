@@ -24,13 +24,13 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
   var get = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pg',
+    url: 'http://192.168.0.3:8080/api/pg/cashed',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
     headers: {
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      //"Access-Control-Allow-Headers": "Content-Type",
+      //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Origin": "*"
     }
   }
@@ -40,13 +40,13 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
     var del = {
       method: 'DELETE',
-      url: 'http://localhost:8080/api/pos/'+ id,
+      url: 'http://192.168.0.3:8080/api/pos/'+ id,
       async: true,
       crossDomain: true,
       dataType: "jsonp",
       headers: {
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        //"Access-Control-Allow-Headers": "Content-Type",
+        //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Origin": "*"
       }
     }

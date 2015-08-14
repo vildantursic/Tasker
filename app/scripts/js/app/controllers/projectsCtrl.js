@@ -2,6 +2,9 @@ var app = angular.module('app');
 
 app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate) {
 
+  $scope.fruitNames = ['User1', 'User2', 'User3'];
+  $scope.readonly = false;
+
   // loading screen
   $scope.status = true;
 

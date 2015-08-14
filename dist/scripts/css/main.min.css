@@ -71,6 +71,32 @@ body {
 	margin-right: 20px;
 }
 
+.sidebar {
+
+}
+.sidebar .content{
+	color: black;
+}
+.sidebar .content img{
+	margin-right: 20px;
+}
+.sidebar .user{
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+.sidebar .user .user-icon {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-top: 20px;
+}
+.sidebar .user h1{
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
 nav {
 	margin: 0;
 }
@@ -106,11 +132,14 @@ nav {
 }
 
 .login-scr {
-  width: 500px;
-  height: 300px;
-  margin-left: 34%;
-  margin-top: 10%;
+    width: 500px;
+    height: 300px;
+    vertical-align: middle;
+    position: absolute;
+    top: 100px;
+    left: 600px;
 }
+
 .login-scr .md-button {
     box-sizing: border-box;
     color: currentColor;
@@ -409,6 +438,20 @@ nav {
 	transition-property: background-color,box-shadow;
 }
 
+.projectEdit {
+	width: 900px;
+}
+
+.projectEdit md-input-container {
+	width: 100%;
+}
+
+.projectEdit .note {
+	width: 100%;
+  height: 200px;
+  word-break: break-word;
+}
+
 .projects {
 	width: 50%;
 	float: right;
@@ -418,7 +461,7 @@ nav {
 	background: #fff;
   margin: 20px;
 	padding: 20px;
-	height: 110px;
+	height: 150px;
 }
 
 .taskslist .task {
@@ -438,6 +481,10 @@ nav {
 
 .taskslist .buttons {
   width: 20%;
+  float: right;
+}
+
+.taskslist .buttons md-button{
   float: right;
 }
 
@@ -469,3 +516,4 @@ nav {
 	width: 100%;
 	float: right;
 }
+

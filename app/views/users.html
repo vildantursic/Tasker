@@ -4,7 +4,7 @@
 
 <div layout="column" ng-hide="status">
   <div layout="row" layout-wrap>
-    <div flex="33" class="adding" hide-sm>
+    <div flex="33" class="adding" hide-sm hide-md>
       <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
         <div flex="33">
           <md-input-container>
@@ -52,14 +52,18 @@
       </md-dialog-content>
     </div>
     <div flex="66" flex-sm="100" class="scrolling">
+
       <div md-content>
-        <md-list-item class="md-3-line" ng-repeat="user in users | filter: search">
+        <md-list-item class="md-3-line users" ng-repeat="user in users | filter: search">
+
           <img ng-src="https://assets-instamotor.imgix.net/user-icon-silhouette.png" class="md-avatar" alt="{{user.who}}" />
           <div class="md-list-user-text">
             <h3>{{ user.username }}</h3>
             <h4>{{ user.email_verified_p }}</h4>
             <p>{{ user.last_visit }}</p>
           </div>
+
+          <md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
 
           <md-divider ></md-divider>
         </md-list-item>

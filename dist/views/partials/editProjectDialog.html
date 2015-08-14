@@ -1,4 +1,4 @@
-<md-dialog aria-label="project" ng-controller="projectsCtrl">
+<md-dialog class="projectEdit" aria-label="project" ng-controller="projectsCtrl">
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -14,30 +14,46 @@
       <div flex>
         <md-input-container>
           <label>Name</label>
-          <input ng-model="projectEdit.name">
+          <input ng-model="projectEdit.project_name">
         </md-input-container>
         <md-input-container>
-          <label>Email</label>
-          <input ng-model="projectEdit.email">
+          <label>Planed Expenses</label>
+          <input ng-model="projectEdit.cost_expense_planned_cache">
         </md-input-container>
       </div>
       <div flex="5">
       </div>
       <div flex>
         <md-input-container>
-          <label>Date</label>
-          <input ng-model="projectEdit.date">
+          <label>Start date</label>
+          <input type="date" ng-model="projectEdit.start_date">
         </md-input-container>
         <md-input-container>
-          <label>Status</label>
-          <input ng-model="projectEdit.status">
+          <label>End date</label>
+          <input type="date" ng-model="projectEdit.end_date">
         </md-input-container>
       </div>
     </div>
     <div layout="row">
+      <md-chips
+        ng-model="fruitNames"
+        readonly="readonly"
+        placeholder="Enter a tag"
+        delete-button-label="Remove Tag"
+        delete-hint="Press delete to remove tag"
+        secondary-placeholder="+Tag"></md-chips>
+    </div>
+    <div layout="row">
+      <md-input-container>
+        <label>Description</label>
+        <input type="text" class="note" ng-model="projectEdit.note">
+      </md-input-container>
+    </div>
+    <div layout="row">
       <div flex class="progress" ng-controller="statusCtrl">
         <label>Progress</label>
-        <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear>
+        <!-- <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear> -->
+        <md-progress-linear md-mode="determinate" value="{{projectEdit.percent_completed}}"></md-progress-linear>
       </div>
     </div>
   </md-dialog-content>

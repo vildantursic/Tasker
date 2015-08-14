@@ -1,9 +1,12 @@
 .login-scr {
-  width: 500px;
-  height: 300px;
-  margin-left: 34%;
-  margin-top: 10%;
+    width: 500px;
+    height: 300px;
+    vertical-align: middle;
+    position: absolute;
+    top: 100px;
+    left: 600px;
 }
+
 .login-scr .md-button {
     box-sizing: border-box;
     color: currentColor;
