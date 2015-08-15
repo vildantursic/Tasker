@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="login-scr">
+    <div class="loogo">
+      <img src="/images/icons/tm-logo-lg.png" alt="" />
+      <h1>TASK MANAGER</h1>
+    </div>
+
+    <div class="shape">
+      <md-dialog-content>
+        <div layout="row" layout-wrap layout-margin>
+          <div flex>
+            <md-input-container>
+              <label>Name</label>
+              <input ng-model="projectEdit.name">
+            </md-input-container>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="projectEdit.email">
+            </md-input-container>
+          </div>
+        </div>
+      </md-dialog-content>
+      <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ui-sref="home" class="md-raised">Login</md-button>
+      </section>
+    </div>
+  </div>
+</div>

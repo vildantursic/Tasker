@@ -15,6 +15,24 @@
       </md-content>
       <md-dialog-content>
         <div layout="row" layout-wrap layout-margin>
+          <md-select ng-model="proj">
+            <md-option ng-repeat="proj in projectTypes" value="{{proj.id}}">{{proj.name}}</md-option>
+          </md-select>
+          <md-select ng-model="project">
+            <md-option ng-repeat="project in projects" value="{{project.project_name}}">{{project.project_name}}</md-option>
+          </md-select>
+          <div flex>
+            <md-select ng-model="proj">
+              <md-option ng-repeat="proj in projectTypes" value="{{proj.id}}">{{proj.name}}</md-option>
+            </md-select>
+          </div>
+          <div flex>
+            <md-select ng-model="project">
+              <md-option ng-repeat="project in projects" value="{{project.project_name}}">{{project.project_name}}</md-option>
+            </md-select>
+          </div>
+        </div>
+        <div layout="row" layout-wrap layout-margin>
           <div flex>
             <md-input-container>
               <label>Name</label>
@@ -33,7 +51,7 @@
               <input type="date" ng-model="projectAdd.start_date">
             </md-input-container>
             <md-input-container>
-              <label>End date</label>
+              <label>Delivery date</label>
               <input type="date" ng-model="projectAdd.end_date">
             </md-input-container>
           </div>
@@ -57,9 +75,9 @@
           <div class="proj">
 
             <div class="content">
-              <div><strong>Name</strong> {{project.project_name}}</div>
-              <div><strong>Status</strong> {{project.status}}</div>
-              <div><strong>Email</strong> {{project.company_id}}</div>
+              <div><strong>Name    :</strong> {{project.project_name | limitTo: 50}}</div>
+              <div><strong>Status  :</strong> {{project.status}}</div>
+              <div><strong>Company :</strong> {{project.company_id}}</div>
             </div>
 
             <section class="buttons">

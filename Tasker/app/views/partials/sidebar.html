@@ -1,0 +1,42 @@
+<md-sidenav class="sidebar" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+  <md-toolbar class="md-theme-light">
+    <div class="user">
+      <img class="user-icon" ng-src="/images/icons/tm-black-user.png" alt="usericon" />
+
+      <h3>Username</h3>
+    </div>
+
+  </md-toolbar>
+  <md-content class="content" ng-controller="LeftCtrl">
+
+    <md-list-item ui-sref="login" class="md-3-line" ng-click="navigateTo(setting.extraScreen, $event)">
+      <img ui-sref="login" ng-src="/images/icons/tm-black-logout.png" alt="logout" />
+      <div ui-sref="login" class="md-list-user-text">
+        <h3>Logout</h3>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item ui-sref="home" class="md-3-line" ng-click="navigateTo(setting.extraScreen, $event)">
+      <img ng-src="/images/icons/tm-black-progress.png" alt="rogress" />
+      <div class="md-list-user-text">
+        <h3>Progress</h3>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item ui-sref="projects" class="md-3-line" ng-click="navigateTo(setting.extraScreen, $event)">
+      <img ng-src="/images/icons/tm-black-projects.png" alt="projects" />
+      <div class="md-list-user-text">
+        <h3>Projects</h3>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item ui-sref="users" class="md-3-line" ng-click="navigateTo(setting.extraScreen, $event)">
+      <img ng-src="/images/icons/tm-black-user.png" alt="users" />
+      <div class="md-list-user-text">
+        <h3>Users</h3>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+
+  </md-content>
+</md-sidenav>

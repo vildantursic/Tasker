@@ -123,7 +123,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       })
     .state('home', {
-      url: "/",
+      url: "/home",
       data: {
         roles: ['User']
       },
@@ -139,7 +139,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "projectsCtrl"
     })
     .state('login', {
-      url: "/login",
+      url: "/",
       data: {
         roles: ['User']
       },

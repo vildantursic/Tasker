@@ -29,11 +29,36 @@ body {
 	/*background: #84ffff;*/
 	background: rgba(33,150,243,0.71) url('/images/icons/tm-pattern.png');
 	color: white;
+    overflow: hidden;
 }
+.adding md-select {
+    padding: 24px 2px 26px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.adding .md-select-label {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2px 2px 1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  position: relative;
+  box-sizing: content-box;
+  /* min-width: 64px; */
+  width: 100%;
+  min-height: 26px;
+}
+
 .adding	md-input-container .md-input {
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
-    text-shadow: ;
 }
 .adding md-input-container:not(.md-input-invalid).md-input-has-value label {
     color: rgba(255, 255, 255, 0.54);
@@ -48,8 +73,8 @@ body {
   word-break: break-word;
 }
 .adding .btn {
-	margin-left: 450px;
-	margin-top: 20px;
+	/*margin-left: 450px;*/
+	/*margin-top: 20px;*/
 }
 
 .scrolling {
@@ -458,8 +483,8 @@ nav {
 }
 
 .taskslist md-whiteframe {
-	background: #fff;
-  margin: 20px;
+	/*background: #fff;*/
+    margin: 20px;
 	padding: 20px;
 	height: 150px;
 }
@@ -517,3 +542,10 @@ nav {
 	float: right;
 }
 
+.task-progress {
+    background-color: linear-gradient(90deg, rgba(97, 180, 246, 0.76) 60%, white 0%);
+    background: -webkit-linear-gradient(90deg, rgba(97, 180, 246, 0.76) 60%, white 0%);
+    background: -o-linear-gradient(90deg, rgba(97, 180, 246, 0.76) 60%, white 0%);
+    background: -moz-linear-gradient(90deg, rgba(97, 180, 246, 0.76) 60%, white 0%);
+    background: linear-gradient(90deg, rgba(97, 180, 246, 0.76) 60%, white 0%);
+}

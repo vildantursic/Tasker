@@ -1,0 +1,59 @@
+.taskslist md-whiteframe {
+	background: #fff;
+  margin: 20px;
+	padding: 20px;
+	height: 150px;
+}
+
+.taskslist .task {
+  width: 100%;
+  height: 100%;
+	overflow: hidden;
+  display: inline-block;
+}
+
+.taskslist .content {
+  float: left;
+  width: 80%;
+}
+.taskslist .content>div{
+  margin-bottom: 5px;
+}
+
+.taskslist .buttons {
+  width: 20%;
+  float: right;
+}
+
+.taskslist .buttons md-button{
+  float: right;
+}
+
+.taskslist .status-Open{
+	background: #8BC34A;
+	width: 15px;
+}
+
+.taskslist .status-Closed{
+	background: #F44336;
+	width: 15px;
+}
+
+.taskEdit {
+	width: 900px;
+}
+
+.taskEdit md-input-container {
+	width: 100%;
+}
+
+.taskEdit .note {
+	width: 100%;
+  height: 200px;
+  word-break: break-word;
+}
+
+.tasks {
+	width: 100%;
+	float: right;
+}

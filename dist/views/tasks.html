@@ -52,19 +52,19 @@
       </md-dialog-content>
     </div>
     <div flex="66" class="scrolling">
-      <md-whiteframe ng-repeat="task in tasks | filter: search" class="md-whiteframe-z3" layout>
+      <md-whiteframe ng-repeat="task in tasks | filter: search" class="md-whiteframe-z3 task-progress" layout>
         <div class="task">
 
           <div class="content">
-            <div><strong>Name</strong> {{task.task}}</div>
-            <div><strong>Company</strong> {{task.company}}</div>
-            <div><strong>Email</strong> {{task.username}}</div>
+            <div><strong>Name           :</strong> {{task.task | limitTo: 50}}</div>
+            <div><strong>Company        :</strong> {{task.company}}</div>
+            <div><strong>Assigned User  :</strong> {{task.username}}</div>
 
-            <div class="progress" ng-controller="statusCtrl">
-              <label>Progress</label>
-              <!-- <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear> -->
-              <md-progress-linear md-mode="determinate" value="{{taskEdit.percent_completed}}"></md-progress-linear>
-            </div>
+            <!--<div class="progress" ng-controller="statusCtrl">-->
+              <!--<label>Progress</label>-->
+              <!--&lt;!&ndash; <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear> &ndash;&gt;-->
+              <!--<md-progress-linear md-mode="determinate" value="{{taskEdit.percent_completed}}"></md-progress-linear>-->
+            <!--</div>-->
           </div>
 
           <section class="buttons">
@@ -72,17 +72,15 @@
               <md-tooltip>
                 Edit
               </md-tooltip>
-              <img src="images/icons/tm-pencil.png"></img>
+              <img src="images/icons/tm-pencil.png">
             </md-button>
             <br>
             <md-button ng-click="showDeleteTask($event, task.id)" class="md-icon-button md-primary" aria-label="Settings">
               <md-tooltip>
                 Delete
               </md-tooltip>
-              <img src="images/icons/tm-delete.png"></img>
+              <img src="images/icons/tm-delete.png">
             </md-button>
-            <!-- <md-button class="md-raised md-primary" ng-click="showEditTask($event, task.id)">edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="showDeleteTask($event, task.id)">delete</md-button> -->
           </section>
 
         </div>

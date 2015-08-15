@@ -1,6 +1,18 @@
 var app = angular.module('app');
 
-app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate) {
+var url = "http://192.168.0.3:8080/";
+
+app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate, $timeout) {
+
+  /*PREDEFINED VALUES FOR ADDING PROJECT*/
+
+    $scope.projectTypes = [
+        { id: '1', name: 'Pepperoni', description: 'A group of projects with common resources or a common budget' },
+        { id: '2', name: 'Software Release', description: 'Represents a software release, consisting of several software release items' },
+        { id: '3', name: 'Milestone', description: 'Milestones appear in the Milestone dashboard' },
+        { id: '4', name: 'Consulting Project', description: 'Generic consulting project or any other project based on a Gantt schedule and Gantt tasks' },
+        { id: '5', name: 'Other', description: 'The project doesnt fit in any category' }
+    ];
 
   $scope.fruitNames = ['User1', 'User2', 'User3'];
   $scope.readonly = false;
@@ -47,13 +59,11 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
   var get = {
     method: 'GET',
-    url: 'http://192.168.0.3:8080/api/pg/projects',
+    url: url + 'api/v1/projects',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
     headers: {
-      //"Access-Control-Allow-Headers": "Content-Type",
-      //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Origin": "*"
     }
   }
@@ -66,14 +76,12 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
     var post = {
       method: 'POST',
-      url: 'http://192.168.0.3:8080/api/pos',
+      url: url + 'api/v1/projects',
       async: true,
       crossDomain: true,
       data: {name: data.name, status: data.status, email: data.email},
       dataType: "jsonp",
       headers: {
-        //"Access-Control-Allow-Headers": "Content-Type",
-        //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Origin": "*"
       }
     }
@@ -114,14 +122,12 @@ app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $wind
 
         var post = {
           method: 'PUT',
-          url: 'http://192.168.0.3:8080/api/pos/' + $scope.projectEdit._id,
+          url: url + 'api/v1/projects' + $scope.projectEdit._id,
           async: true,
           crossDomain: true,
           data: {name: $scope.projectEdit.name, status: $scope.projectEdit.status, email: $scope.projectEdit.email},
           dataType: "jsonp",
           headers: {
-            //"Access-Control-Allow-Headers": "Content-Type",
-            //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
             "Access-Control-Allow-Origin": "*"
           }
         }

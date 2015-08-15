@@ -1,5 +1,7 @@
 var app = angular.module('app');
 
+var url = "http://192.168.0.3:8080/";
+
 app.controller('usersCtrl', function ($scope, $mdDialog, $http, $stateParams, $state, $window, $mdToast, $animate) {
 
   // loading screen
@@ -12,13 +14,11 @@ app.controller('usersCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
   var req = {
     method: 'GET',
-    url: 'http://localhost:8080/api/pg/users',
+    url: url + '/api/pg/users',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
     headers: {
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Origin": "*"
     }
   }

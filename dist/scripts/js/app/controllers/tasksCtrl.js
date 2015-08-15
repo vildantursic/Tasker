@@ -1,5 +1,7 @@
 var app = angular.module('app');
 
+var url = "http://192.168.0.3:8080/";
+
 app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $state) {
 
   // loading screen
@@ -7,7 +9,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
   $scope.change = function (){
     $scope.status = false;
-  }
+  };
   // ******************
 
   $scope.request = function (){
@@ -20,36 +22,33 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
       alert("Failed");
     });
 
-  }
+  };
 
   var get = {
     method: 'GET',
-    url: 'http://192.168.0.3:8080/api/pg/cashed',
+    url: url + 'api/v1/tasks',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
     headers: {
-      //"Access-Control-Allow-Headers": "Content-Type",
-      //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Origin": "*"
     }
-  }
+  };
+
   $scope.request(get);
 
   $scope.deleteTask = function(id){
 
     var del = {
       method: 'DELETE',
-      url: 'http://192.168.0.3:8080/api/pos/'+ id,
+      url: url +  'api/v1/tasks'+ id,
       async: true,
       crossDomain: true,
       dataType: "jsonp",
       headers: {
-        //"Access-Control-Allow-Headers": "Content-Type",
-        //"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Origin": "*"
       }
-    }
+    };
 
     $http(del).success(function(){
       console.log("Task deleted");
@@ -64,7 +63,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
       $state.reload();
     }, 2000);
 
-  }
+  };
 
   $scope.showEditTask = function(ev, id) {
 
@@ -105,7 +104,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
       scope: $scope.$new(),
       templateUrl: 'views/partials/deleteTaskDialog.html',
       parent: angular.element(document.body),
-      targetEvent: ev,
+      targetEvent: ev
     })
     .then(function(answer) {
       if(answer == "yes"){
