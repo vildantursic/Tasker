@@ -41,7 +41,7 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
 
     var del = {
       method: 'DELETE',
-      url: url +  'api/v1/tasks'+ id,
+      url: url +  '/api/pos/'+ id,
       async: true,
       crossDomain: true,
       dataType: "jsonp",

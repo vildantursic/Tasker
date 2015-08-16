@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	padding: 0;
 }
 
 .home md-card {
@@ -27,9 +28,14 @@ body {
 
 .adding {
 	/*background: #84ffff;*/
-	background: rgba(33,150,243,0.71) url('/images/icons/tm-pattern.png');
+	background: rgba(33,150,243,1) url('/images/icons/tm-pattern.png');
 	color: white;
     overflow: hidden;
+}
+.adding .content-add {
+    height: 750px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .adding md-select {
     padding: 24px 2px 26px;
@@ -445,22 +451,6 @@ nav {
 
 .projectlist .buttons {
   width: 100%;
-}
-
-.md-button.md-fab {
-	z-index: 20;
-	position: absolute;
-	margin-top: -30px;
-	line-height: 56px;
-	min-width: 0;
-	width: 56px;
-	height: 56px;
-	vertical-align: middle;
-	border-radius: 50%;
-	background-clip: padding-box;
-	overflow: hidden;
-	transition: .2s linear;
-	transition-property: background-color,box-shadow;
 }
 
 .projectEdit {

@@ -14,20 +14,16 @@
       <change type="DELETED" beforePath="C:\Users\Vildan\Documents\CODE\Tasker\dist\views\partials\editDialog.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Vildan\Documents\CODE\Tasker\dist\views\partials\editTasksDialog.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Vildan\Documents\CODE\Tasker\npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/editProjectDialog.html" afterPath="$PROJECT_DIR$/dist/views/partials/editProjectDialog.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/editTaskDialog.html" afterPath="$PROJECT_DIR$/dist/views/partials/editTaskDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/js/app/controllers/headerCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/js/app/controllers/headerCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/controllers/headerCtrl.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/controllers/headerCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/header.html" afterPath="$PROJECT_DIR$/dist/views/partials/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/home.html" afterPath="$PROJECT_DIR$/dist/views/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/controllers/homeCtrl.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/controllers/homeCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/css/main.min.css" afterPath="$PROJECT_DIR$/dist/scripts/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/projects.html" afterPath="$PROJECT_DIR$/dist/views/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/js/app/controllers/projectsCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/js/app/controllers/projectsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/routing.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/routing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/tasks.html" afterPath="$PROJECT_DIR$/dist/views/tasks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/js/app/controllers/tasksCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/js/app/controllers/tasksCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/js/app/controllers/usersCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/js/app/controllers/usersCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js" afterPath="$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/users.html" afterPath="$PROJECT_DIR$/dist/views/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tasker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,21 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/users.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -73,37 +59,7 @@
         <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editTaskDialog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/partials/editTaskDialog.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.923077">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editProjectDialog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/partials/editProjectDialog.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/projects.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.698112">
-              <caret line="77" column="82" selection-start-line="77" selection-start-column="82" selection-end-line="77" selection-end-column="82" />
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -112,8 +68,77 @@
       <file leaf-file-name="tasks.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/views/tasks.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
-              <caret line="54" column="101" selection-start-line="54" selection-start-column="101" selection-end-line="54" selection-end-column="101" />
+            <state vertical-scroll-proportion="-1.9615384">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usersCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/views/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.923077">
+              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#md-grid-tile#0;n#md-grid-list#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#nvd3#0;n#md-grid-tile#1;n#md-grid-list#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/homeCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.9259257">
+              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/views/users.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5660377">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projects.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/views/projects.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.522113">
+              <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#md-select#0;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-select#1;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-select#0;n#div#0;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-select#0;n#div#0;n#div#3;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-select#0;n#div#1;n#div#3;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/views/partials/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.576923">
+              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="38" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -122,18 +147,8 @@
       <file leaf-file-name="main.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/scripts/css/main.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.275862">
-              <caret line="544" column="16" selection-start-line="544" selection-start-column="16" selection-end-line="544" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/routing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4705882">
-              <caret line="126" column="13" selection-start-line="126" selection-start-column="13" selection-end-line="126" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,15 +171,19 @@
         <option value="$PROJECT_DIR$/app/scripts/js/app/controllers/usersCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/js/app/controllers/projectsCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/js/app/controllers/headerCtrl.js" />
-        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js" />
-        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js" />
-        <option value="$PROJECT_DIR$/dist/views/partials/editTaskDialog.html" />
         <option value="$PROJECT_DIR$/dist/views/partials/editProjectDialog.html" />
-        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js" />
-        <option value="$PROJECT_DIR$/dist/views/projects.html" />
-        <option value="$PROJECT_DIR$/dist/views/tasks.html" />
-        <option value="$PROJECT_DIR$/dist/scripts/css/main.min.css" />
         <option value="$PROJECT_DIR$/dist/scripts/js/app/routing.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/js/app/controllers/homeCtrl.js" />
+        <option value="$PROJECT_DIR$/dist/views/home.html" />
+        <option value="$PROJECT_DIR$/dist/views/partials/editTaskDialog.html" />
+        <option value="$PROJECT_DIR$/dist/views/users.html" />
+        <option value="$PROJECT_DIR$/dist/views/tasks.html" />
+        <option value="$PROJECT_DIR$/dist/views/partials/header.html" />
+        <option value="$PROJECT_DIR$/dist/scripts/css/main.min.css" />
+        <option value="$PROJECT_DIR$/dist/views/projects.html" />
       </list>
     </option>
   </component>
@@ -384,6 +403,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -693,12 +734,12 @@
       <option name="number" value="Default" />
       <updated>1439637849343</updated>
       <workItem from="1439637850616" duration="1543000" />
-      <workItem from="1439640288941" duration="9355000" />
+      <workItem from="1439640288941" duration="17999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10898000" />
+    <option name="totallyTimeSpent" value="19542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -824,42 +865,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js">
+    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/routing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49019608">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/partials/editProjectDialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/partials/editTaskDialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        <state vertical-scroll-proportion="2.4705882">
+          <caret line="126" column="13" selection-start-line="126" selection-start-column="13" selection-end-line="126" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -867,40 +876,105 @@
     <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/projectsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/projects.html">
+    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/usersCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.698112">
-          <caret line="77" column="82" selection-start-line="77" selection-start-column="82" selection-end-line="77" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/partials/editProjectDialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/partials/editTaskDialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14149822">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/homeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9259257">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#md-grid-tile#0;n#md-grid-list#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#nvd3#0;n#md-grid-tile#1;n#md-grid-list#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5660377">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/controllers/tasksCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/views/tasks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="54" column="101" selection-start-line="54" selection-start-column="101" selection-end-line="54" selection-end-column="101" />
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/scripts/css/main.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.275862">
-          <caret line="544" column="16" selection-start-line="544" selection-start-column="16" selection-end-line="544" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/js/app/routing.js">
+    <entry file="file://$PROJECT_DIR$/dist/views/partials/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4705882">
-          <caret line="126" column="13" selection-start-line="126" selection-start-column="13" selection-end-line="126" selection-end-column="13" />
+        <state vertical-scroll-proportion="-21.576923">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="38" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/projects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.522113">
+          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#md-select#0;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#1;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#0;n#div#0;n#div#1;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#0;n#div#0;n#div#3;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#0;n#div#1;n#div#3;n#md-dialog-content#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
