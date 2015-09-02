@@ -4,157 +4,102 @@ var url = "http://192.168.0.3:8080/";
 
 app.controller('projectsCtrl', function ($scope, $mdDialog, $http, $state, $window, $mdToast, $animate, $timeout) {
 
-  /*PREDEFINED VALUES FOR ADDING PROJECT*/
+    $scope.hide = function() {
+        $mdDialog.hide();
+    };
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    };
+    $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+    };
 
-    $scope.projectTypes = [
-        { id: '1', name: 'Pepperoni', description: 'A group of projects with common resources or a common budget' },
-        { id: '2', name: 'Software Release', description: 'Represents a software release, consisting of several software release items' },
-        { id: '3', name: 'Milestone', description: 'Milestones appear in the Milestone dashboard' },
-        { id: '4', name: 'Consulting Project', description: 'Generic consulting project or any other project based on a Gantt schedule and Gantt tasks' },
-        { id: '5', name: 'Other', description: 'The project doesnt fit in any category' }
-    ];
+    // loading screen
+    $scope.status = true;
 
-  $scope.fruitNames = ['User1', 'User2', 'User3'];
-  $scope.readonly = false;
-
-  // loading screen
-  $scope.status = true;
-
-  $scope.change = function (){
-    $scope.status = false;
-  }
-  // ******************
-
-  $scope.toastPosition = {
-    bottom: false,
-    top: true,
-    left: false,
-    right: true
-  };
-  $scope.getToastPosition = function() {
-    return Object.keys($scope.toastPosition)
-      .filter(function(pos) { return $scope.toastPosition[pos]; })
-      .join(' ');
-  };
-
-  $scope.showSimpleToast = function() {
-    $mdToast.show(
-      $mdToast.simple()
-        .content('You created project!')
-        .position($scope.getToastPosition())
-        .hideDelay(3000)
-    );
-  };
-
-  $scope.request = function (req) {
-
-    $http(req).success(function(data){
-      $scope.projects = data.rows;
-      $scope.change();
-    }).error(function(){
-      alert("Failed");
-    });
-
-  }
-
-  var get = {
-    method: 'GET',
-    url: url + 'api/v1/projects',
-    async: true,
-    crossDomain: true,
-    dataType: "jsonp",
-    headers: {
-      "Access-Control-Allow-Origin": "*"
+    $scope.change = function () {
+        $scope.status = false;
     }
-  }
+    // ******************
 
-  $scope.request(get);
+    $scope.request = function (req) {
 
-  $scope.addProject = function (data){
+        $http(req).success(function (data) {
+            $scope.projects = data.rows;
+            $scope.change();
+        }).error(function () {
+            $state.go("404");
+        });
 
-    console.log(data);
+    };
 
-    var post = {
-      method: 'POST',
-      url: url + 'api/v1/projects',
-      async: true,
-      crossDomain: true,
-      data: {name: data.name, status: data.status, email: data.email},
-      dataType: "jsonp",
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      }
-    }
-
-    $http(post).success(function(data){
-      //
-      $scope.showSimpleToast();
-    }).error(function(){
-      alert("Failed");
-    });
+    var get = {
+        method: 'GET',
+        url: url + 'api/v1/projects',
+        async: true,
+        crossDomain: true,
+        dataType: "jsonp",
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
+    };
 
     $scope.request(get);
 
-  }
+    $scope.addProject = function (data) {
 
-  $scope.showEditProject = function(ev, id) {
-
-    for (var i = 0; i < $scope.projects.length; i++) {
-      angular.forEach($scope.projects[i], function(value, key) {
-        if(value == id){
-          $scope.projectEdit = $scope.projects[i];
-        }
-      });
-    }
-
-    $mdDialog.show({
-      controller: DialogController,
-      scope: $scope.$new(),
-      templateUrl: 'views/partials/editProjectDialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-    })
-    .then(function(answer) {
-      //console.log('You chose "' + answer + '".');
-      if(answer == "save"){
-
-        console.log()
+        console.log(data);
 
         var post = {
-          method: 'PUT',
-          url: url + 'api/v1/projects' + $scope.projectEdit._id,
-          async: true,
-          crossDomain: true,
-          data: {name: $scope.projectEdit.name, status: $scope.projectEdit.status, email: $scope.projectEdit.email},
-          dataType: "jsonp",
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
+            method: 'POST',
+            url: url + 'api/v1/projects',
+            async: true,
+            crossDomain: true,
+            data: {name: data.name, status: data.status, email: data.email},
+            dataType: "jsonp",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        };
 
-        $http(post).success(function(data){
-          //
-        }).error(function(){
-          alert("Failed");
+        $http(post).success(function (data) {
+            //
+            $scope.showSimpleToast();
+        }).error(function () {
+            alert("Failed");
         });
 
-        //$scope.request(get);
-        setTimeout(function(){
-          //$window.location.reload();
-          $state.reload();
-        }, 2000);
+        $scope.request(get);
 
-      }
-    }, function() {
-      console.log('You cancelled the dialog.');
-    });
-  };
+    };
 
-})
 
-app.config( function($mdThemingProvider){
-  // Configure a dark theme with primary foreground yellow
-  $mdThemingProvider.theme('docs-dark', 'default')
-  .primaryPalette('blue')
-  .dark();
+//SHOW ADD DIALOG
+    $scope.showAddProject = function (ev) {
+
+        $mdDialog.show({
+            controller: 'tasksCtrl',
+            scope: $scope.$new(),
+            templateUrl: 'views/partials/dialogs/addProjectDialog.html',
+            parent: angular.element(document.body),
+            targetEvent: ev
+        })
+            .then(function(answer){
+
+            },
+            function () {
+                console.log('You cancelled the dialog.');
+            });
+    };
+
+
 });
+
+app.config(function ($mdThemingProvider) {
+    // Configure a dark theme with primary foreground yellow
+    $mdThemingProvider.theme('docs-dark', 'default')
+        .primaryPalette('blue')
+        .dark();
+});
+
+//p_project_id, p_object_type, p_creation_date, p_creation_user, p_creation_ip, p_context_id, p_project_name, p_project_nr, p_project_path, p_parent_id, p_company_id, p_project_type_id, p_project_status_id

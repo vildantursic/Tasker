@@ -1,0 +1,28 @@
+<div>
+    <md-whiteframe class="md-whiteframe-z3" layout>
+        <div class="proj">
+
+            <div class="content">
+                <div><strong>Name    :</strong> {{project.project_name | limitTo: 50}}</div>
+                <div><strong>description  :</strong> {{project.description | limitTo: 50}}</div>
+                <div><strong>Company :</strong> {{project.company_id}}</div>
+            </div>
+
+            <section class="buttons">
+                <md-button ng-click="showEditProject($event, project)" class="md-icon-button" aria-label="Edit">
+                    <md-tooltip>
+                        Edit
+                    </md-tooltip>
+                    <img src="images/icons/tm-pencil.png">
+                </md-button>
+                <md-button ui-sref="tasks({id:project.project_id})" class="md-icon-button f-right" aria-label="Go">
+                    <md-tooltip>
+                        Go
+                    </md-tooltip>
+                    <img src="images/icons/tm-arrow.png">
+                </md-button>
+            </section>
+
+        </div>
+    </md-whiteframe>
+</div>

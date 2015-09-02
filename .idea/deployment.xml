@@ -5,7 +5,7 @@
       <paths name="TaskerAPP">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/tiimiss/task_management/taskerWebApp/Tasker" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www/tiimiss/task_management/taskerWebApp/ba.globalgps.web.tm" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

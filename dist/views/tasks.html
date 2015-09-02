@@ -2,91 +2,18 @@
   <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
 </div>
 
-<div layout="column" class="taskslist" ng-hide="status">
-  <div layout="row" layout-wrap>
-    <div flex="33" class="adding">
-      <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-        <div flex>
-          <md-input-container>
-            <label>Search</label>
-            <input ng-model="search">
-          </md-input-container>
-        </div>
-      </md-content>
-      <md-dialog-content>
-        <div layout="row" layout-wrap layout-margin>
-          <div flex>
-            <md-input-container>
-              <label>Name</label>
-              <input ng-model="taskAdd.task">
-            </md-input-container>
-            <md-input-container>
-              <label>Assigned</label>
-              <input ng-model="taskAdd.username">
-            </md-input-container>
-          </div>
-          <div flex="5">
-          </div>
-          <div flex>
-            <md-input-container>
-              <label>Start date</label>
-              <input type="date" ng-model="taskAdd.start_date">
-            </md-input-container>
-            <md-input-container>
-              <label>End date</label>
-              <input type="date" ng-model="taskAdd.end_date">
-            </md-input-container>
-          </div>
-          <md-input-container>
-            <label>Description</label>
-            <input type="text" class="note" ng-model="taskAdd.note">
-          </md-input-container>
-        </div>
-        <div layout="row">
-          <div class="btn">
-            <md-button class="md-fab">
-              <img src="images/icons/tm-add.png"></img>
-            </md-button>
-          </div>
-        </div>
-      </md-dialog-content>
+<div class="taskslist" ng-hide="status">
+
+  <md-button class="md-fab add-btn" ng-click="showAddTask($event)" aria-label="Eat cake">
+    <img src="images/icons/tm-add.png" alt=""/>
+  </md-button>
+
+  <div flex class="scrolling">
+    <div ng-repeat="task in tasks | filter: search">
+      <task-box task="task"></task-box>
     </div>
-    <div flex="66" class="scrolling">
-      <md-whiteframe ng-repeat="task in tasks | filter: search" class="md-whiteframe-z3 task-progress" layout>
-        <div class="task">
-
-          <div class="content">
-            <div><strong>Name           :</strong> {{task.task | limitTo: 50}}</div>
-            <div><strong>Company        :</strong> {{task.company}}</div>
-            <div><strong>Assigned User  :</strong> {{task.username}}</div>
-
-            <!--<div class="progress" ng-controller="statusCtrl">-->
-              <!--<label>Progress</label>-->
-              <!--&lt;!&ndash; <md-progress-linear class="md-accent" md-mode="{{mode}}" value="{{determinateValue}}"></md-progress-linear> &ndash;&gt;-->
-              <!--<md-progress-linear md-mode="determinate" value="{{taskEdit.percent_completed}}"></md-progress-linear>-->
-            <!--</div>-->
-          </div>
-
-          <section class="buttons">
-            <md-button ng-click="showEditTask($event, task.id)" class="md-icon-button md-primary" aria-label="Settings">
-              <md-tooltip>
-                Edit
-              </md-tooltip>
-              <img src="images/icons/tm-pencil.png">
-            </md-button>
-            <br>
-            <md-button ng-click="showDeleteTask($event, task.id)" class="md-icon-button md-primary" aria-label="Settings">
-              <md-tooltip>
-                Delete
-              </md-tooltip>
-              <img src="images/icons/tm-delete.png">
-            </md-button>
-          </section>
-
-        </div>
-        <div class="status-{{task.status}}"></div>
-      </md-whiteframe>
-    </div>
-
   </div>
+
 </div>
+
+

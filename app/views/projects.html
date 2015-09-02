@@ -2,75 +2,16 @@
   <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
 </div>
 
-<div layout="column" class="projectlist" ng-hide="status">
-  <div layout="row" layout-wrap>
-    <div flex="33" class="adding">
-      <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-        <div flex="33">
-          <md-input-container>
-            <label>Search</label>
-            <input ng-model="search">
-          </md-input-container>
-        </div>
-      </md-content>
-      <md-dialog-content>
-        <div layout="row" layout-wrap layout-margin>
-          <div flex>
-            <md-input-container>
-              <label>Name</label>
-              <input ng-model="projectAdd.task">
-            </md-input-container>
-            <md-input-container>
-              <label>Assigned</label>
-              <input ng-model="projectAdd.username">
-            </md-input-container>
-          </div>
-          <div flex="5">
-          </div>
-          <div flex>
-            <md-input-container>
-              <label>Start date</label>
-              <input type="date" ng-model="projectAdd.start_date">
-            </md-input-container>
-            <md-input-container>
-              <label>End date</label>
-              <input type="date" ng-model="projectAdd.end_date">
-            </md-input-container>
-          </div>
-          <md-input-container>
-            <label>Description</label>
-            <input type="text" class="note" ng-model="projectAdd.note">
-          </md-input-container>
-        </div>
-        <div layout="row">
-          <div class="btn">
-            <md-button class="md-fab">
-              <img src="images/icons/tm-add.png"></img>
-            </md-button>
-          </div>
-        </div>
-      </md-dialog-content>
+<div class="projectlist" ng-hide="status">
+
+  <md-button class="md-fab add-btn" ng-click="showAddProject($event)" aria-label="Eat cake">
+    <img src="images/icons/tm-add.png" alt=""/>
+  </md-button>
+
+  <div flex class="scrolling">
+    <div class="projects" ng-repeat="project in projects | filter: search">
+      <project-box project="project"></project-box>
     </div>
-    <div flex="66" class="scrolling">
-      <div class="projects" ng-repeat="project in projects | filter: search">
-        <md-whiteframe class="md-whiteframe-z3" layout>
-          <div class="proj">
-
-            <div class="content">
-              <div><strong>Name</strong> {{project.project_name}}</div>
-              <div><strong>Status</strong> {{project.status}}</div>
-              <div><strong>Email</strong> {{project.company_id}}</div>
-            </div>
-
-            <section class="buttons">
-              <md-button class="md-raised" ui-sref="tasks({id:'13'})">go</md-button>
-              <md-button class="md-raised md-primary" ng-click="showEditProject($event, project._id)">edit</md-button>
-            </section>
-
-          </div>
-        </md-whiteframe>
-      </div>
-    </div>
-
   </div>
+
 </div>

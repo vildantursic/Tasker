@@ -2,73 +2,16 @@
   <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
 </div>
 
-<div layout="column" ng-hide="status">
-  <div layout="row" layout-wrap>
-    <div flex="33" class="adding" hide-sm hide-md>
-      <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-        <div flex="33">
-          <md-input-container>
-            <label>Search</label>
-            <input ng-model="search">
-          </md-input-container>
+<div ng-hide="status">
+    <md-button class="md-fab add-btn" ng-click="addUserDialog($event)" aria-label="Eat cake">
+        <img src="images/icons/tm-add.png" alt=""/>
+    </md-button>
+
+    <div flex class="scrolling">
+
+        <div ng-repeat="user in users | filter: search">
+            <user-box user="user"></user-box>
         </div>
-      </md-content>
-      <md-dialog-content>
-        <div layout="row" layout-wrap layout-margin>
-          <div flex>
-            <md-input-container>
-              <label>Name</label>
-              <input ng-model="usersAdd.task">
-            </md-input-container>
-            <md-input-container>
-              <label>Assigned</label>
-              <input ng-model="usersAdd.username">
-            </md-input-container>
-          </div>
-          <div flex="5">
-          </div>
-          <div flex>
-            <md-input-container>
-              <label>Start date</label>
-              <input type="date" ng-model="usersAdd.start_date">
-            </md-input-container>
-            <md-input-container>
-              <label>End date</label>
-              <input type="date" ng-model="usersAdd.end_date">
-            </md-input-container>
-          </div>
-          <md-input-container>
-            <label>Description</label>
-            <input type="text" class="note" ng-model="usersAdd.note">
-          </md-input-container>
-        </div>
-        <div layout="row">
-          <div class="btn">
-            <md-button class="md-fab">
-              <img src="images/icons/tm-add.png"></img>
-            </md-button>
-          </div>
-        </div>
-      </md-dialog-content>
+
     </div>
-    <div flex="66" flex-sm="100" class="scrolling">
-
-      <div md-content>
-        <md-list-item class="md-3-line users" ng-repeat="user in users | filter: search">
-
-          <img ng-src="https://assets-instamotor.imgix.net/user-icon-silhouette.png" class="md-avatar" alt="{{user.who}}" />
-          <div class="md-list-user-text">
-            <h3>{{ user.username }}</h3>
-            <h4>{{ user.email_verified_p }}</h4>
-            <p>{{ user.last_visit }}</p>
-          </div>
-
-          <md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
-
-          <md-divider ></md-divider>
-        </md-list-item>
-      </div>
-    </div>
-
-  </div>
 </div>

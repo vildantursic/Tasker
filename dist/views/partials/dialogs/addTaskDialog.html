@@ -1,0 +1,101 @@
+<md-dialog class="taskAdd" aria-label="task" ng-controller="tasksCtrl">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>ADD NEW TASK</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="answer('close')">
+                    <img src="images/icons/tm-close.png" aria-label="Close dialog">
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex>
+                    <md-input-container>
+                        <label>Name</label>
+                        <input ng-model="addTask.task">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex>
+                    <md-select name="material" placeholder="Material" ng-model="addTask.material" style="min-width: 200px;">
+                        <md-option ng-repeat="material in materials" value="{{material.id}}">{{material.name}}</md-option>
+                    </md-select>
+                </div>
+                <div flex>
+                    <md-select name="cost-center" placeholder="Cost center" ng-model="addTask.cost" style="min-width: 200px;">
+                        <md-option ng-repeat="cost in costs" value="{{cost.id}}">{{cost.name}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex>
+                    <md-select name="status" placeholder="Status" ng-model="addTask.status" style="min-width: 200px;">
+                        <md-option ng-repeat="status in states" value="{{status.id}}">{{status.name}}</md-option>
+                    </md-select>
+                </div>
+                <div flex>
+                    <md-select name="uom" placeholder="Unit of measure" ng-model="addTask.uom" style="min-width: 200px;">
+                        <md-option ng-repeat="uom in unitsOfMeasures" value="{{uom.id}}">{{uom.name}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex>
+                    <md-input-container>
+                        <label>Planed units</label>
+                        <input ng-model="addTask.planed_units">
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label>Billed hours</label>
+                        <input ng-model="addTask.billed_hours">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex="10" layout layout-align="center center">
+                    <span class="md-body-1">Completed</span>
+                </div>
+                <md-slider flex class="md-primary" md-discrete ng-model="addTask.percent_completed" step="20" min="0" max="100" aria-label="rating">
+                </md-slider>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <md-input-container>
+                    <label>Description</label>
+                    <input type="text" class="note" ng-model="addTask.note">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <div flex>
+                    <md-input-container>
+                        <label>Start date</label>
+                        <input type="text" ng-model="addTask.start_date">
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label>End date</label>
+                        <input type="text" ng-model="addTask.end_date">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-wrap layout-margin>
+                <pre>{{taskAdd | json}}</pre>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="answer('cancel')" class="md-warn">
+                cancel
+            </md-button>
+            <md-button ng-click="answer('save')" class="md-raised md-primary">
+                save
+            </md-button>
+        </div>
+    </form>
+</md-dialog>
+
+

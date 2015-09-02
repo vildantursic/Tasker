@@ -21,8 +21,6 @@
 }
 
 .taskslist .buttons {
-  width: 20%;
-  float: right;
 }
 
 .taskslist .buttons md-button{
@@ -46,6 +44,22 @@
 .taskEdit md-input-container {
 	width: 100%;
 }
+.taskEdit .md-select-label {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 2px 2px 1px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	position: relative;
+	box-sizing: content-box;
+	min-width: 64px;
+	width: 100%;
+	min-height: 26px;
+}
 
 .taskEdit .note {
 	width: 100%;
@@ -56,4 +70,39 @@
 .tasks {
 	width: 100%;
 	float: right;
+}
+
+.taskAdd {
+	width: 900px;
+}
+
+.taskAdd md-input-container {
+	width: 100%;
+}
+.taskAdd .md-select-label {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 2px 2px 1px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	position: relative;
+	box-sizing: content-box;
+	min-width: 64px;
+	width: 100%;
+	min-height: 26px;
+}
+
+.taskAdd .note {
+	height: 200px;
+	word-break: break-word;
+}
+
+.sub-task {
+	margin-left: 200px !important;
+	margin-top: -15px !important;
+	background-color: #ECECEC !important;
 }

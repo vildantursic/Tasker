@@ -4,33 +4,6 @@ var url = "http://192.168.0.3:8080/";
 
 app.controller('homeCtrl', function ($scope, $http) {
 
-  // $scope.config = {
-  //   visible: true, // default: true
-  //   extended: false, // default: false
-  //   disabled: false, // default: false
-  //   autorefresh: true, // default: true
-  //   refreshDataOnly: false // default: false
-  // };
-
-  var req = {
-    method: 'GET',
-    url: url + 'api/v1/users',
-    async: true,
-    crossDomain: true,
-    dataType: "jsonp",
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  }
-
-  $http(req).success(function(data){
-    //console.log(data.rows);
-    $scope.users = data.rows;
-    $scope.change();
-  }).error(function(){
-    alert("Failed");
-  });
-
   $scope.options = {
     "chart": {
       x: function(d){return d.key;},

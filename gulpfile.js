@@ -11,12 +11,17 @@ gulp.task('styles', function() {
 	.pipe(reload({stream:true}));
 });
 
-// gulp.task('scripts', function() {
-//   gulp.src("app/scripts/js/*.js")
-//   .pipe(concat("main.min.js"))
-//   .pipe(gulp.dest("dist/scripts/js"))
-// 	.pipe(reload({stream:true}));
-// });
+ gulp.task('scripts', function() {
+   gulp.src("app/scripts/js/*.js")
+   .pipe(gulp.dest("dist/scripts/js"))
+ 	.pipe(reload({stream:true}));
+ });
+
+gulp.task('images', function() {
+    gulp.src("images/**/*.*")
+        .pipe(gulp.dest("dist/"))
+        .pipe(reload({stream:true}));
+});
 
 gulp.task('html', function() {
   gulp.src("app/views/**/*.html")
@@ -52,11 +57,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function() {
   gulp.watch("app/scripts/css/**/*.css", ['styles']);
-  // gulp.watch("app/scripts/js/**/*.js", ['scripts']);
+  gulp.watch("app/scripts/js/**/*.js", ['scripts']);
   gulp.watch("app/views/**/*.html", ['html']);
 	gulp.watch("app/scripts/js/app/**/*.js", ['angular']);
-	gulp.watch("app/bower_components/**/*.*", ['bpwer']);
+	gulp.watch("app/bower_components/**/*.*", ['bower']);
 	gulp.watch("app/index.html", ['index']);
+    gulp.watch("app/images/**/*.*", ['images']);
 });
 
-gulp.task('default', ['styles', 'html', 'index', 'angular', 'bower', 'browser-sync', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'images', 'html', 'index', 'angular', 'bower', 'browser-sync', 'watch']);

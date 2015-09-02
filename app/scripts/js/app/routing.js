@@ -106,9 +106,10 @@ app.factory('authorization', ['$rootScope', '$state', 'principal',
   }
 ])
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
-  // For any unmatched url, redirect to /state1
+  // For any unmatched url, redirect to /
+
   $urlRouterProvider.otherwise("/");
   //
   // Now set up the states
@@ -130,6 +131,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/home.html",
       controller: "homeCtrl"
     })
+    .state('logout', {
+      url: "/logout"
+    })
     .state('projects', {
       url: "/projects",
       data: {
@@ -138,30 +142,39 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/projects.html",
       controller: "projectsCtrl"
     })
-    .state('login', {
-      url: "/login",
-      data: {
-        roles: ['User']
-      },
-      templateUrl: "views/login.html",
-      controller: "headerCtrl"
-    })
     .state('users', {
       url: "/users",
       data: {
-        roles: ['User']
+        roles: ['Admin']
       },
       templateUrl: "views/users.html",
       controller: "usersCtrl"
     })
-    .state('tasks', {
-      url: "/tasks/:id",
+    .state('companies', {
+      url: "/companies",
       data: {
         roles: ['Admin']
       },
+      templateUrl: "views/companies.html",
+      controller: "companiesCtrl"
+    })
+    .state('tasks', {
+      url: "/tasks/:id",
+      data: {
+        roles: ['User']
+      },
       templateUrl: "views/tasks.html",
       controller: "tasksCtrl"
+    })
+    .state('404', {
+      url: "/404",
+      templateUrl: "views/404.html"
     });
+
+  //$locationProvider.html5Mode({
+  //  enabled: true,
+  //  requireBase: true
+  //});
 })
 .run(['$rootScope', '$state', '$stateParams', 'authorization', 'principal',
     function($rootScope, $state, $stateParams, authorization, principal) {

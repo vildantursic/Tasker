@@ -1,0 +1,216 @@
+<div class="loading" ng-show="status">
+    <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+</div>
+
+<div ng-hide="status">
+
+    <div flex class="scrolling">
+
+        <md-tabs md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+            <md-tab id="tab1">
+                <md-tab-label>Item One</md-tab-label>
+                <md-tab-body>
+
+                    <div class="taskslist">
+                        <md-whiteframe class="md-whiteframe-z3 task-progress" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+                        <md-whiteframe class="md-whiteframe-z3 task-progress sub-task" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+                        <md-whiteframe class="md-whiteframe-z3 task-progress sub-task" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+
+                        <md-whiteframe class="md-whiteframe-z3 task-progress" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+                        <md-whiteframe class="md-whiteframe-z3 task-progress sub-task" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+                        <md-whiteframe class="md-whiteframe-z3 task-progress sub-task" layout>
+                            <div class="task">
+
+                                <div class="content">
+                                    <div><strong>Name           :</strong> name</div>
+                                    <div><strong>Company        :</strong> company</div>
+                                    <div><strong>Assigned User  :</strong> user</div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Edit
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-pencil.png">
+                                    </md-button>
+                                    <br>
+                                    <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                                        <md-tooltip>
+                                            Delete
+                                        </md-tooltip>
+                                        <img src="images/icons/tm-delete.png">
+                                    </md-button>
+                                </div>
+                                <div class="container-perc">
+                                    <pct-complete value="60"></pct-complete>
+                                </div>
+                            </div>
+                        </md-whiteframe>
+                    </div>
+
+                </md-tab-body>
+            </md-tab>
+            <md-tab id="tab2" ng-disabled="data.secondLocked">
+                <md-tab-label>Item Two</md-tab-label>
+                <md-tab-body>
+
+                </md-tab-body>
+            </md-tab>
+            <md-tab id="tab3">
+                <md-tab-label>Item Three</md-tab-label>
+                <md-tab-body>
+
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+
+</div>

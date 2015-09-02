@@ -1,29 +1,9 @@
-var app = angular.module('app', ['ui.router','ngMaterial', 'nvd3'])
+var app = angular.module('app', ['ui.router','ngMaterial', 'nvd3', 'ngStorage']);
 
 app.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
-    .accentPalette('orange');
-})
-
-app.controller('statusCtrl', ['$scope', '$interval', function($scope, $interval) {
-  $scope.mode = 'query';
-  $scope.determinateValue = 30;
-  $scope.determinateValue2 = 30;
-  $interval(function() {
-    $scope.determinateValue = 60;
-  }, 100, 0, true);
-  $interval(function() {
-    $scope.mode = ($scope.mode == 'query' ? 'determinate' : 'query');
-  }, 7200, 0, true);
-}]);
-
-app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-  $scope.name = "Vildan";
-
-  $scope.close = function () {
-    $mdSidenav('left').close();
-  };
+    .primaryPalette('orange')
+    .accentPalette('red');
 });
 
 function DialogController($scope, $mdDialog) {
@@ -38,3 +18,23 @@ function DialogController($scope, $mdDialog) {
     $mdDialog.hide(answer);
   };
 }
+
+//getting ip address
+$.get("http://ipinfo.io", function(response) {
+  console.log(response);
+}, "jsonp");
+
+//TOAST MESSAGE DEFINING
+var toastPosition = {
+    bottom: false,
+    top: true,
+    left: false,
+    right: true
+};
+function getToastPosition() {
+    return Object.keys(toastPosition)
+        .filter(function (pos) {
+            return toastPosition[pos];
+        })
+        .join(' ');
+};

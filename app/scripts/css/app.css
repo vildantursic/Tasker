@@ -1,15 +1,27 @@
-body {
+html, body {
 	margin: 0;
 	padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 .home md-card {
   height: 500px;
 	display: inline-block;
 	overflow: hidden;
-}
-.home md-card .md-actions {
-
 }
 
 .progress h4 {
@@ -33,7 +45,6 @@ body {
 .adding	md-input-container .md-input {
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
-    text-shadow: ;
 }
 .adding md-input-container:not(.md-input-invalid).md-input-has-value label {
     color: rgba(255, 255, 255, 0.54);
@@ -44,8 +55,8 @@ body {
 }
 .adding .note {
 	width: 100%;
-  height: 200px;
-  word-break: break-word;
+  	height: 200px;
+  	word-break: break-all;
 }
 .adding .btn {
 	margin-left: 450px;
@@ -53,7 +64,8 @@ body {
 }
 
 .scrolling {
-	height: 93vh;
+	height: 86vh;
+    padding: 15px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -66,33 +78,48 @@ body {
 	vertical-align: middle;
 }
 
-.logo {
-	width: 50px;
-	margin-right: 20px;
-}
-
-.sidebar {
-
-}
-.sidebar .content{
-	color: black;
-}
-.sidebar .content img{
-	margin-right: 20px;
-}
-.sidebar .user{
-	width: 100%;
-	text-align: center;
+.user{
 	vertical-align: middle;
 }
-.sidebar .user .user-icon {
-	width: 100px;
-	height: 100px;
+.user .user-icon {
+	width: 45px;
+	height: 45px;
 	border-radius: 50%;
-	margin-top: 20px;
+	margin: 15px;
+	float: left;
 }
-.sidebar .user h1{
-	width: 100%;
+.user h3{
+	vertical-align: middle;
+	float: left;
+	font-size: 17px;
+}
+
+.minimize {
+	margin-left: -305px;
+	transition: ease all 0.5s;
+}
+
+.active {
+	background: #B6B6B6;
+}
+
+.error {
 	text-align: center;
 	vertical-align: middle;
+}
+.error h1 {
+	font-size: 200px;
+	text-shadow: 10px 10px 10px #d1d0d0;
+}
+
+.error h2 {
+    font-size: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul li>ul>li{
+    padding-left: 20px;
 }

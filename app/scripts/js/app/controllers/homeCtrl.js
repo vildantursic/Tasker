@@ -1,14 +1,8 @@
 var app = angular.module('app');
 
-app.controller('homeCtrl', function ($scope) {
+var url = "http://192.168.0.3:8080/";
 
-  // $scope.config = {
-  //   visible: true, // default: true
-  //   extended: false, // default: false
-  //   disabled: false, // default: false
-  //   autorefresh: true, // default: true
-  //   refreshDataOnly: false // default: false
-  // };
+app.controller('homeCtrl', function ($scope, $http) {
 
   $scope.options = {
     "chart": {
@@ -186,4 +180,22 @@ app.controller('homeCtrl', function ($scope) {
     }
   ];
 
-})
+  /*Finance graph*/
+
+  $scope.financeOptions = {
+    chart: {
+      type: 'bulletChart',
+      transitionDuration: 500
+    }
+  };
+
+  $scope.financeData = {
+    "title": "Revenue",
+    "subtitle": "US$, in thousands",
+    "ranges": [150,225,300],
+    "measures": [220],
+    "markers": [250]
+  }
+
+
+});

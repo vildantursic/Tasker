@@ -1,8 +1,12 @@
 var app = angular.module('app');
 
-var url = "http://192.168.0.3:8080/";
+var url = "http://77.78.198.112:38080/";
 
-app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $state) {
+app.controller('tasksCtrl', function ($scope, $mdDialog, $http) {
+
+  $scope.taskAddResult = function () {
+    console.log($scope.taskAdd);
+  };
 
   // loading screen
   $scope.status = true;
@@ -15,18 +19,19 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
   $scope.request = function (){
 
     $http(get).success(function(data){
-      //console.log(data);
-      $scope.tasks = data.rows;
-      $scope.change();
+
+        $scope.tasks = data.rows;
+
+        $scope.change();
     }).error(function(){
-      alert("Failed");
+      $state.go("404");
     });
 
   };
 
   var get = {
     method: 'GET',
-    url: url + 'api/pg/cashed',
+    url: url + 'api/v1/tasks',
     async: true,
     crossDomain: true,
     dataType: "jsonp",
@@ -35,91 +40,23 @@ app.controller('tasksCtrl', function ($scope, $mdDialog, $http, $stateParams, $s
     }
   };
 
-  $scope.request(get);
+  $scope.request();
 
-  $scope.deleteTask = function(id){
-
-    var del = {
-      method: 'DELETE',
-      url: url +  '/api/pos/'+ id,
-      async: true,
-      crossDomain: true,
-      dataType: "jsonp",
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      }
-    };
-
-    $http(del).success(function(){
-      console.log("Task deleted");
-    }).error(function(){
-      alert("Failed");
-    });
-
-    //$scope.request(get);
-
-    setTimeout(function(){
-      //$window.location.reload();
-      $state.reload();
-    }, 2000);
-
-  };
-
-  $scope.showEditTask = function(ev, id) {
-
-    for (var i = 0; i < $scope.tasks.length; i++) {
-      angular.forEach($scope.tasks[i], function(value, key) {
-          if(value == id){
-            $scope.taskEdit = $scope.tasks[i];
-          }
-      });
-    }
+  //ADD
+  $scope.showAddTask = function(ev) {
 
     $mdDialog.show({
       controller: DialogController,
       scope: $scope.$new(),
-      templateUrl: 'views/partials/editTaskDialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-    })
-    .then(function(answer) {
-      console.log('You chose "' + answer + '".');
-    }, function() {
-      console.log('You cancelled the dialog.');
-    });
-  };
-
-  $scope.showDeleteTask = function(ev, id) {
-
-    for (var i = 0; i < $scope.tasks.length; i++) {
-      angular.forEach($scope.tasks[i], function(value, key) {
-          if(value == id){
-            $scope.taskEdit = $scope.tasks[i];
-          }
-      });
-    }
-
-    $mdDialog.show({
-      controller: DialogController,
-      scope: $scope.$new(),
-      templateUrl: 'views/partials/deleteTaskDialog.html',
+      templateUrl: 'views/partials/dialogs/addTaskDialog.html',
       parent: angular.element(document.body),
       targetEvent: ev
     })
-    .then(function(answer) {
-      if(answer == "yes"){
-        $scope.deleteTask($scope.taskEdit._id);
-      }
-    }, function() {
-      console.log('You cancelled the dialog.');
-    });
+        .then(function(answer) {
+
+        }, function() {
+          console.log('You cancelled the dialog.');
+        });
   };
 
-});
-
-app.config( function($mdThemingProvider){
-  // Configure a dark theme with primary foreground yellow
-  $mdThemingProvider.theme('docs-dark', 'default')
-  .primaryPalette('blue')
-  .dark();
 });
