@@ -1,4 +1,4 @@
-<md-dialog class="taskEdit" aria-label="task" ng-controller="tasksCtrl">
+<md-dialog class="dialog" aria-label="task" ng-controller="taskEditCtrl">
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -13,76 +13,54 @@
       <div layout="row" layout-wrap layout-margin>
         <div flex>
           <md-input-container>
-            <label>Name</label>
-            <input ng-model="taskEdit.task">
+            <label>Task name</label>
+            <input type="text" ng-model="editTask.task_name">
+          </md-input-container>
+        </div>
+        <div flex>
+          <md-input-container>
+            <label>Assigned user</label>
+            <input type="text" ng-model="editTask.assigned_username">
           </md-input-container>
         </div>
       </div>
       <div layout="row" layout-wrap layout-margin>
-        <div flex>
-          <md-select name="material" placeholder="Material" ng-model="taskEdit.material" style="min-width: 200px;">
-            <md-option ng-repeat="material in materials" value="{{material.id}}">{{material.name}}</md-option>
-          </md-select>
+        <div flex class="fix-2">
+          <md-datepicker md-placeholder="Enter date" ng-model="editTask.end_time"></md-datepicker>
         </div>
         <div flex>
-          <md-select name="cost-center" placeholder="Cost center" ng-model="taskEdit.cost" style="min-width: 200px;">
-            <md-option ng-repeat="cost in costs" value="{{cost.id}}">{{cost.name}}</md-option>
-          </md-select>
-        </div>
-      </div>
-      <div layout="row" layout-wrap layout-margin>
-        <div flex>
-          <md-select name="status" placeholder="Status" ng-model="taskEdit.status" style="min-width: 200px;">
-            <md-option ng-repeat="status in states" value="{{status.id}}">{{status.name}}</md-option>
-          </md-select>
-        </div>
-        <div flex>
-          <md-select name="uom" placeholder="Unit of measure" ng-model="taskEdit.uom" style="min-width: 200px;">
-            <md-option ng-repeat="uom in unitsOfMeasures" value="{{uom.id}}">{{uom.name}}</md-option>
+          <md-select name="parent_task" placeholder="Parent task" ng-model="editTask.parent_task" style="min-width: 200px;">
+            <md-option ng-repeat="parent_task in object" value="{{parent_task.id}}">{{parent_task.task_name}}</md-option>
           </md-select>
         </div>
       </div>
       <div layout="row" layout-wrap layout-margin>
         <div flex>
           <md-input-container>
-            <label>Planed units</label>
-            <input ng-model="taskEdit.planed_units">
-          </md-input-container>
-        </div>
-        <div flex>
-          <md-input-container>
-            <label>Billed hours</label>
-            <input ng-model="taskEdit.billed_hours">
+            <label>Description</label>
+            <input type="text" class="note" ng-model="editTask.description">
           </md-input-container>
         </div>
       </div>
       <div layout="row" layout-wrap layout-margin>
-        <div flex="10" layout layout-align="center center">
-          <span class="md-body-1">Completed</span>
-        </div>
-        <md-slider flex class="md-primary" md-discrete ng-model="taskEdit.percent_completed" step="20" min="0" max="100" aria-label="rating">
-        </md-slider>
-      </div>
-      <div layout="row" layout-wrap layout-margin>
-        <md-input-container>
-          <label>Description</label>
-          <input type="text" class="note" ng-model="taskEdit.note">
-        </md-input-container>
-      </div>
-      <div layout="row" layout-wrap layout-margin>
         <div flex>
           <md-input-container>
-            <label>Start date</label>
-            <input type="text" ng-model="taskEdit.start_date">
-          </md-input-container>
-        </div>
-        <div flex>
-          <md-input-container>
-            <label>End date</label>
-            <input type="text" ng-model="taskEdit.end_date">
+            <label>Task specifics</label>
+            <input type="text" class="note" ng-model="editTask.task_specifics">
           </md-input-container>
         </div>
       </div>
+      <!-- /////////////////////////////////// -->
+
+      <!-- Nature of problem-->
+
+
+
+      <!-- //////////////////////////////////-->
+
+      <pre>
+        {{ editTask | json }}
+      </pre>
     </md-dialog-content>
   <div class="md-actions" layout="row">
     <md-button ng-click="answer('cancel')" class="md-warn">

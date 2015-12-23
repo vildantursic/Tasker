@@ -1,201 +1,138 @@
 var app = angular.module('app');
 
-var url = "http://192.168.0.3:8080/";
+app.controller('homeCtrl', ['$scope', '$http', 'myHttp', '$timeout', function ($scope, $http, myHttp, $timeout) {
 
-app.controller('homeCtrl', function ($scope, $http) {
+    // loading screen
+    $scope.change = function () {
+        $scope.status = false;
+    };
+    // ******************
 
-  $scope.options = {
-    "chart": {
-      x: function(d){return d.key;},
-      y: function(d){return d.y;},
-      "type": "pieChart",
-      "height": 500,
-      "showLabels": true,
-      "transitionDuration": 500,
-      "labelThreshold": 0.01,
-      "legend": {
-        "margin": {
-          "top": 5,
-          "right": 35,
-          "bottom": 5,
-          "left": 0
-        },
-        "dispatch": {},
-        "width": 400,
-        "height": 20,
-        "align": true,
-        "rightAlign": true,
-        "padding": 32,
-        "updateState": true,
-        "radioButtonMode": false,
-        "expanded": false,
-        "vers": "classic"
-      },
-      "dispatch": {},
-      "pie": {
-        "dispatch": {},
-        "arcsRadius": [],
-        "width": 500,
-        "height": 500,
-        "showLabels": true,
-        "title": false,
-        "titleOffset": 0,
-        "labelThreshold": 0.02,
-        "id": 2314,
-        "endAngle": false,
-        "startAngle": false,
-        "padAngle": false,
-        "cornerRadius": 0,
-        "donutRatio": 0.5,
-        "labelsOutside": false,
-        "labelSunbeamLayout": false,
-        "donut": false,
-        "growOnHover": true,
-        "pieLabelsOutside": false,
-        "donutLabelsOutside": false,
-        "margin": {
-          "top": 0,
-          "right": 0,
-          "bottom": 0,
-          "left": 0
-        },
-        "labelType": "key"
-      },
-      "tooltip": {
-        "duration": 0,
-        "gravity": "w",
-        "distance": 25,
-        "snapDistance": 0,
-        "classes": null,
-        "chartContainer": null,
-        "fixedTop": null,
-        "enabled": true,
-        "hideDelay": 400,
-        "headerEnabled": false,
-        "position": {
-          "left": null,
-          "top": null
-        },
-        "offset": {
-          "left": 0,
-          "top": 0
-        },
-        "hidden": true,
-        "data": null,
-        "tooltipElem": null,
-        "id": "nvtooltip-87994"
-      },
-      "arcsRadius": [],
-      "width": 500,
-      "title": false,
-      "titleOffset": 0,
-      "endAngle": false,
-      "startAngle": false,
-      "padAngle": false,
-      "cornerRadius": 0,
-      "donutRatio": 0.5,
-      "labelsOutside": true,
-      "labelSunbeamLayout": false,
-      "donut": true,
-      "growOnHover": true,
-      "pieLabelsOutside": true,
-      "donutLabelsOutside": false,
-      "margin": {
-        "top": 30,
-        "right": 20,
-        "bottom": 20,
-        "left": 20
-      },
-      "labelType": "key",
-      "noData": null,
-      "showLegend": true,
-      "legendPosition": "top",
-      "defaultState": null,
-      "tooltips": true,
-      "duration": 250
-    },
-    "title": {
-      "enable": false,
-      "text": "Write Your Title",
-      "className": "h4",
-      "css": {
-        "width": "500px",
-        "textAlign": "center"
-      }
-    },
-    "subtitle": {
-      "enable": false,
-      "text": "Write Your Subtitle",
-      "css": {
-        "width": "500px",
-        "textAlign": "center"
-      }
-    },
-    "caption": {
-      "enable": false,
-      "text": "Figure 1. Write Your Caption text.",
-      "css": {
-        "width": "500px",
-        "textAlign": "center"
-      }
-    },
-    "styles": {
-      "classes": {
-        "with-3d-shadow": true,
-        "with-transitions": true,
-        "gallery": false
-      },
-      "css": {}
-    }
-  };
+    myHttp($scope, {method: 'GET', url: 'api/v1/wh/projects'});
 
-  $scope.data = [
-    {
-      key: "One",
-      y: 5
-    },
-    {
-      key: "Two",
-      y: 11
-    },
-    {
-      key: "Three",
-      y: 23
-    },
-    {
-      key: "Four",
-      y: 7
-    },
-    {
-      key: "Five",
-      y: 4
-    },
-    {
-      key: "Six",
-      y: 33
-    },
-    {
-      key: "Seven",
-      y: .5
-    }
-  ];
+    $timeout(function(){
 
-  /*Finance graph*/
+        $scope.options = {
+            chart: {
+                type: 'pieChart',
+                x: function(d){return d.key;},
+                y: function(d){return d.y;},
+                showLabels: true,
+                transitionDuration: 500,
+                labelThreshold: 0.01,
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 0,
+                        bottom: 5,
+                        left: 0
+                    }
+                }
+            }
+        };
 
-  $scope.financeOptions = {
-    chart: {
-      type: 'bulletChart',
-      transitionDuration: 500
-    }
-  };
+        $scope.data = [
+            {
+                key: "Finished",
+                y: 25
+            },
+            {
+                key: "Unfinished",
+                y: 60
+            },
+            {
+                key: "Blocked",
+                y: 15
+            }
+        ];
 
-  $scope.financeData = {
-    "title": "Revenue",
-    "subtitle": "US$, in thousands",
-    "ranges": [150,225,300],
-    "measures": [220],
-    "markers": [250]
-  }
+        //////////////////////////////////
+
+        $scope.optionsA = {
+            chart: {
+                type: 'lineWithFocusChart',
+                margin : {
+                    top: 20,
+                    right: 20,
+                    bottom: 60,
+                    left: 40
+                },
+                transitionDuration: 500,
+                xAxis: {
+                    axisLabel: 'X Axis',
+                    tickFormat: function(d){
+                        return d3.format(',f')(d);
+                    }
+                },
+                x2Axis: {
+                    tickFormat: function(d){
+                        return d3.format(',f')(d);
+                    }
+                },
+                yAxis: {
+                    axisLabel: 'Y Axis',
+                    tickFormat: function(d){
+                        return d3.format(',.2f')(d);
+                    },
+                    rotateYLabel: false
+                },
+                y2Axis: {
+                    tickFormat: function(d){
+                        return d3.format(',.2f')(d);
+                    }
+                }
+
+            }
+        };
+
+        $scope.dataA = generateData();
+
+        /* Random Data Generator (took from nvd3.org) */
+        function generateData() {
+            return stream_layers(3,10+Math.random()*200,.1).map(function(data, i) {
+                return {
+                    key: 'Stream' + i,
+                    values: data
+                };
+            });
+        }
+
+        /* Inspired by Lee Byron's test data generator. */
+        function stream_layers(n, m, o) {
+            if (arguments.length < 3) o = 0;
+            function bump(a) {
+                var x = 1 / (.1 + Math.random()),
+                    y = 2 * Math.random() - .5,
+                    z = 10 / (.1 + Math.random());
+                for (var i = 0; i < m; i++) {
+                    var w = (i / m - y) * z;
+                    a[i] += x * Math.exp(-w * w);
+                }
+            }
+            return d3.range(n).map(function() {
+                var a = [], i;
+                for (i = 0; i < m; i++) a[i] = o + o * Math.random();
+                for (i = 0; i < 5; i++) bump(a);
+                return a.map(stream_index);
+            });
+        }
+
+        /* Another layer generator using gamma distributions. */
+        function stream_waves(n, m) {
+            return d3.range(n).map(function(i) {
+                return d3.range(m).map(function(j) {
+                    var x = 20 * j / m - i / 3;
+                    return 2 * x * Math.exp(-.5 * x);
+                }).map(stream_index);
+            });
+        }
+
+        function stream_index(d, i) {
+            return {x: i, y: Math.max(0, d)};
+        }
+
+    },1000);
 
 
-});
+
+}]);

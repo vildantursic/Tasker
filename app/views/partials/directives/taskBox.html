@@ -1,31 +1,38 @@
 <div>
-    <md-whiteframe class="md-whiteframe-z3 task-progress" layout>
-        <div class="task">
+    <md-whiteframe id="taks" class="md-whiteframe-z3 task-progress" ng-class="task.sub" layout="row">
+        <div class="task" flex>
 
-            <div class="content">
-                <div><strong>Name           :</strong> {{task.task | limitTo: 50}}</div>
-                <div><strong>Company        :</strong> {{task.company}}</div>
-                <div><strong>Assigned User  :</strong> {{task.username}}</div>
-
+            <div class="content" layout="column">
+                <div class="name"><strong>Title           :</strong> {{ ::task.task_name | limitTo: 50 }}</div>
+                <div><strong>Assigned user        :</strong> {{ ::task.assigned_username }}</div>
+                <div><strong>Description        :</strong> {{ ::task.description | limitTo: 50 }}</div>
+                <!-- <div hidden class="{{task.parent_task}}"></div> -->
             </div>
-
-            <div class="buttons">
-                <md-button ng-click="showEditTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+            <div class="container-perc">
+                <pct-complete value=" task.percentage | limitTo: 3"></pct-complete>
+            </div>
+            <div flex class="task-buttons">
+              <md-button ng-click="hideSubtasks(task.subtask)" class="md-icon-button md-primary" aria-label="Settings">
+                  <md-tooltip>
+                      More
+                  </md-tooltip>
+                  <img src="images/icons/tm-arrow-down.png">
+              </md-button>
+            </div>
+            <div flex class="task-buttons">
+                <md-button ng-click="editTaskDialog($event, 'editTaskDialog', task)" class="md-icon-button md-primary" aria-label="Settings">
                     <md-tooltip>
                         Edit
                     </md-tooltip>
                     <img src="images/icons/tm-pencil.png">
                 </md-button>
                 <br>
-                <md-button ng-click="showDeleteTask($event, task)" class="md-icon-button md-primary" aria-label="Settings">
+                <md-button ng-click="deleteTaskDialog($event, 'deleteTaskDialog', task)" class="md-icon-button md-primary" aria-label="Settings">
                     <md-tooltip>
                         Delete
                     </md-tooltip>
                     <img src="images/icons/tm-delete.png">
                 </md-button>
-            </div>
-            <div class="container-perc">
-                <pct-complete value="task.percent_completed | limitTo: 3"></pct-complete>
             </div>
         </div>
     </md-whiteframe>

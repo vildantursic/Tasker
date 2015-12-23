@@ -3,13 +3,15 @@
 </div>
 
 <div ng-hide="status">
-    <md-button class="md-fab add-btn" ng-click="addUserDialog($event)" aria-label="Eat cake">
+    <md-button class="md-fab add-btn" ng-click="addUserDialog($event)" aria-label="Add user">
         <img src="images/icons/tm-add.png" alt=""/>
     </md-button>
 
     <div flex class="scrolling">
 
-        <div ng-repeat="user in users | filter: search">
+        <search-box></search-box>
+
+        <div ng-repeat="user in object | filter: search">
             <user-box user="user"></user-box>
         </div>
 

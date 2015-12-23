@@ -12,6 +12,9 @@
     "browser-sync": "^2.8.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.2.0"
+    "gulp-connect": "^2.2.0",
+    "gulp-serve": "^1.2.0",
+    "gulp-uglify": "^1.2.0",
+    "karma": "^0.13.11"
   }
 }

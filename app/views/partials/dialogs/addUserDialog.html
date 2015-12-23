@@ -1,4 +1,4 @@
-<md-dialog class="projectEdit" aria-label="user" ng-controller="usersCtrl">
+<md-dialog class="dialog" aria-label="user" ng-controller="usersCtrl">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -10,21 +10,25 @@
             </div>
         </md-toolbar>
         <md-dialog-content>
+            <form action="userForm">
             <div layout="row" layout-wrap layout-margin>
                 <div flex>
                     <md-input-container>
                         <label>Email</label>
-                        <input md-maxlength="30" required ng-model="addUser.email"/>
-                        <div ng-messages="projectForm.description.$error">
+                        <input type="email" name="email" required ng-model="addUser.email"/>
+                        <div ng-messages="userForm.email.$error" role="alert">
                             <div ng-message="required">This is required.</div>
-                            <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
                         </div>
                     </md-input-container>
                 </div>
                 <div flex>
                     <md-input-container>
                         <label>Username</label>
-                        <input type="text" ng-model="addUser.username"/>
+                        <input type="text" name="username" required md-maxlength="30" ng-model="addUser.username"/>
+                        <div ng-messages="userForm.username.$error" role="alert">
+                            <div ng-message="required">This is required.</div>
+                            <div ng-message="md-maxlength">The username has to be less than 30 characters long.</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
@@ -46,7 +50,10 @@
                 <div flex>
                     <md-input-container>
                         <label>Password</label>
-                        <input type="password" ng-model="addUser.password"/>
+                        <input type="password" name="password" required ng-model="addUser.password"/>
+                        <div ng-messages="userForm.password.$error" role="alert">
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div flex>
@@ -68,9 +75,7 @@
                     </md-select>
                 </div>
             </div>
-            <div layout="row" layout-wrap layout-margin>
-                <pre>{{addUser | json}}</pre>
-            </div>
+            </form>
         </md-dialog-content>
         <div class="md-actions" layout="row">
             <md-button ng-click="answer('cancel')" class="md-warn">

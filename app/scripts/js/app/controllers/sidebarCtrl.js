@@ -3,7 +3,8 @@
  */
 var app = angular.module('app');
 
-app.controller('sidebarCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $state) {
+app.controller('sidebarCtrl', ['$scope', '$timeout', '$mdSidenav', '$mdUtil', '$state', '$http', function ($scope, $timeout, $mdSidenav, $mdUtil, $state, $http) {
+    $scope.username = "user";
 
     $scope.toggleLeft = buildToggler('left');
 
@@ -24,4 +25,4 @@ app.controller('sidebarCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $
         $("#sidebar").toggleClass("minimize");
     });
 
-});
+}]);

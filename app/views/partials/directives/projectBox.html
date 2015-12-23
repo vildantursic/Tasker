@@ -1,25 +1,18 @@
 <div>
-    <md-whiteframe class="md-whiteframe-z3" layout>
-        <div class="proj">
+    <md-whiteframe class="md-whiteframe-z3" layout="row">
+        <div class="project" flex>
 
-            <div class="content">
-                <div><strong>Name    :</strong> {{project.project_name | limitTo: 50}}</div>
-                <div><strong>description  :</strong> {{project.description | limitTo: 50}}</div>
-                <div><strong>Company :</strong> {{project.company_id}}</div>
+            <div class="content" layout="column">
+                <div class="name"><b>Title    :</b> {{ ::project.title | limitTo: 50 }}</div>
+                <div><b>Date created    :</b> {{ ::project.date_created }}</div>
             </div>
 
             <section class="buttons">
-                <md-button ng-click="showEditProject($event, project)" class="md-icon-button" aria-label="Edit">
-                    <md-tooltip>
-                        Edit
-                    </md-tooltip>
-                    <img src="images/icons/tm-pencil.png">
-                </md-button>
-                <md-button ui-sref="tasks({id:project.project_id})" class="md-icon-button f-right" aria-label="Go">
+                <md-button ui-sref="tasks({id:project.id})" class="md-icon-button f-right" aria-label="Go">
                     <md-tooltip>
                         Go
                     </md-tooltip>
-                    <img src="images/icons/tm-arrow.png">
+                    <img src="images/icons/tm-arrow-right.png">
                 </md-button>
             </section>
 

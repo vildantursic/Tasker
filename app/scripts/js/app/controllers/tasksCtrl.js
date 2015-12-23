@@ -1,62 +1,108 @@
 var app = angular.module('app');
 
-var url = "http://77.78.198.112:38080/";
+app.controller('tasksCtrl', ['$scope', '$mdDialog', '$http', 'myHttp', '$timeout', '$q', '$log', '$state', 'myPopup', 'myDialog', function ($scope, $mdDialog, $http, myHttp, $timeout, $q, $log, $state, myPopup, myDialog) {
 
-app.controller('tasksCtrl', function ($scope, $mdDialog, $http) {
+    $scope.minDate = new Date();
 
-  $scope.taskAddResult = function () {
-    console.log($scope.taskAdd);
-  };
+    $scope.parent_project = $state.params.id;
 
-  // loading screen
-  $scope.status = true;
+    // loading screen
+    $scope.status = true;
 
-  $scope.change = function (){
-    $scope.status = false;
-  };
-  // ******************
+    $scope.change = function () {
+        $scope.status = false;
+    };
+    // **************
 
-  $scope.request = function (){
+    // myHttp($scope, {method: 'GET', url: 'api/v1/wh/tasks?parent_project=' + $scope.parent_project});
+    $scope.object = {};
 
-    $http(get).success(function(data){
+    var httpParameters = {
+        method: "GET",
+        url: "http://localhost:7001/api/v1/wh/tasks?parent_project=" + $scope.parent_project,
+        async: true,
+        crossDomain: true,
+        dataType: "jsonp",
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
+    };
 
-        $scope.tasks = data.rows;
+    $http(httpParameters).success(function(data){
+        // $scope.object = data;
+        for(var obj in data){
+          var subtasks = [];
 
+          var id = data[obj].id;
+
+            for(var sub in data){
+              if(id == data[sub].parent_task){
+                data[sub].sub = "sub-task";
+                subtasks.push(data[sub]);
+                delete data[sub];
+              }
+            }
+            data[obj].subtask = subtasks;
+        }
+        $scope.object = data;
+        // console.log($scope.object);
         $scope.change();
-    }).error(function(){
-      $state.go("404");
+    }).error(function(data){
+        console.log(data);
+        $state.go("404");
     });
 
-  };
+    //$scope.addTaskDialog = function(event, dialogName){
+    //
+    //    myDialog(event, dialogName, $scope, function(){
+    //
+    //        myHttp($scope, {method: 'POST', url: 'api/v1/wh/tasks'}, $scope.addTask);
+    //
+    //        myPopup('Task is added');
+    //    });
+    //};
 
-  var get = {
-    method: 'GET',
-    url: url + 'api/v1/tasks',
-    async: true,
-    crossDomain: true,
-    dataType: "jsonp",
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  };
+    $scope.addTaskDialog = function (ev) {
 
-  $scope.request();
+        $mdDialog.show({
+            controller: 'tasksCtrl',
+            scope: $scope.$new(),
+            templateUrl: 'views/partials/dialogs/addTaskDialog.html',
+            parent: angular.element(document.body),
+            targetEvent: ev
+        }).then(function (answer) {
 
-  //ADD
-  $scope.showAddTask = function(ev) {
-
-    $mdDialog.show({
-      controller: DialogController,
-      scope: $scope.$new(),
-      templateUrl: 'views/partials/dialogs/addTaskDialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev
-    })
-        .then(function(answer) {
-
-        }, function() {
-          console.log('You cancelled the dialog.');
+        }, function () {
+            console.log('You cancelled the dialog.');
         });
-  };
+    };
 
-});
+    $scope.hide = function () {
+        $mdDialog.hide();
+    };
+    $scope.cancel = function () {
+        $mdDialog.cancel();
+    };
+    $scope.answer = function (answer) {
+        if (answer == "save") {
+            $scope.addTask.parent_project = $state.params.id;
+
+            myHttp($scope, {method: 'POST', url: 'api/v1/wh/tasks'}, $scope.addTask);
+        }
+        $mdDialog.hide(answer);
+    };
+
+    $scope.object = '';
+
+    //Pagination
+    $scope.currentPage = 0;
+    $scope.pageSize = 10;
+
+    $timeout(function () {
+        $scope.numberOfPages = function () {
+            return Math.ceil($scope.object.length / $scope.pageSize);
+        };
+
+    }, 1000);
+
+}]);

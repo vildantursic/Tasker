@@ -1,104 +1,36 @@
 .taskslist md-whiteframe {
 	background: #fff;
-  margin: 20px;
+  	margin: 20px;
 	padding: 20px;
-	height: 150px;
+	min-height: 150px;
 }
 
 .taskslist .task {
-  width: 100%;
-  height: 100%;
-	overflow: hidden;
-  display: inline-block;
+  	width: 100%;
+  	height: 100%;
+		overflow: hidden;
+  	display: inline-block;
 }
 
 .taskslist .content {
-  float: left;
-  width: 80%;
+		font-size: 17px;
+  	float: left;
+		/*min-height: 150px*/
 }
 .taskslist .content>div{
-  margin-bottom: 5px;
+  	margin-bottom: 5px;
+}
+.taskslist .content .name{
+	font-size: 24px;
 }
 
-.taskslist .buttons {
-}
-
-.taskslist .buttons md-button{
-  float: right;
-}
-
-.taskslist .status-Open{
-	background: #8BC34A;
-	width: 15px;
-}
-
-.taskslist .status-Closed{
-	background: #F44336;
-	width: 15px;
-}
-
-.taskEdit {
-	width: 900px;
-}
-
-.taskEdit md-input-container {
-	width: 100%;
-}
-.taskEdit .md-select-label {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	padding: 2px 2px 1px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	position: relative;
-	box-sizing: content-box;
-	min-width: 64px;
-	width: 100%;
-	min-height: 26px;
-}
-
-.taskEdit .note {
-	width: 100%;
-  height: 200px;
-  word-break: break-word;
+.taskslist .task-buttons {
+	float: right;
 }
 
 .tasks {
 	width: 100%;
 	float: right;
-}
-
-.taskAdd {
-	width: 900px;
-}
-
-.taskAdd md-input-container {
-	width: 100%;
-}
-.taskAdd .md-select-label {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	padding: 2px 2px 1px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	position: relative;
-	box-sizing: content-box;
-	min-width: 64px;
-	width: 100%;
-	min-height: 26px;
-}
-
-.taskAdd .note {
-	height: 200px;
-	word-break: break-word;
 }
 
 .sub-task {

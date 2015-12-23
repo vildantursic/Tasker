@@ -15,7 +15,7 @@
         </md-button>
 
         <span flex></span>
-        <md-button href="/logout" class="md-icon-button" aria-label="Logout" hide-sm>
+        <md-button href="http://tiimiss.globalgps.ba" class="md-icon-button" aria-label="Logout">
             <md-tooltip>
                 Logout
             </md-tooltip>
@@ -27,12 +27,12 @@
             </md-tooltip>
             <img src="images/icons/tm-user.png">
         </md-button>
-        <md-button class="md-icon-button" aria-label="Projects" hide-sm>
-            <md-tooltip>
-                Help
-            </md-tooltip>
-            <img src="images/icons/tm-add.png">
-        </md-button>
+        <!--<md-button class="md-icon-button" aria-label="Projects" hide-sm>-->
+            <!--<md-tooltip>-->
+                <!--Help-->
+            <!--</md-tooltip>-->
+            <!--<img  src="images/icons/tm-question.png">-->
+        <!--</md-button>-->
 
         <div class="main-logo" layout-align="end start" hide-sm hide-md>
           <img src="/images/icons/tiimiss.png" alt="" />
@@ -41,7 +41,7 @@
     </div>
 
     <h2 class="md-toolbar-tools md-toolbar-tools-bottom" style="padding-left: 15px;" hide-sm hide-md>
-      <span class="md-flex" style="padding-left: 305px">Location: </span>
+      <span class="md-flex" style="padding-left: 230px">Location: {{$state.current.name}}</span>
     </h2>
   </md-toolbar>
 </md-content>

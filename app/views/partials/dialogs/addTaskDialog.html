@@ -1,5 +1,5 @@
-<md-dialog class="taskAdd" aria-label="task" ng-controller="tasksCtrl">
-    <form>
+<md-dialog class="dialog" aria-label="task" ng-controller="tasksCtrl">
+    <form ng-submit="$event.preventDefault()">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>ADD NEW TASK</h2>
@@ -13,78 +13,53 @@
             <div layout="row" layout-wrap layout-margin>
                 <div flex>
                     <md-input-container>
-                        <label>Name</label>
-                        <input ng-model="addTask.task">
+                        <label>Task name</label>
+                        <input type="text" ng-model="addTask.task_name">
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label>Assigned user</label>
+                        <input type="text" ng-model="addTask.assigned_username">
                     </md-input-container>
                 </div>
             </div>
             <div layout="row" layout-wrap layout-margin>
-                <div flex>
-                    <md-select name="material" placeholder="Material" ng-model="addTask.material" style="min-width: 200px;">
-                        <md-option ng-repeat="material in materials" value="{{material.id}}">{{material.name}}</md-option>
-                    </md-select>
+                <div flex class="fix-2">
+                    <md-datepicker md-placeholder="Enter date" md-min-date="minDate" ng-model="addTask.end_time"></md-datepicker>
                 </div>
                 <div flex>
-                    <md-select name="cost-center" placeholder="Cost center" ng-model="addTask.cost" style="min-width: 200px;">
-                        <md-option ng-repeat="cost in costs" value="{{cost.id}}">{{cost.name}}</md-option>
-                    </md-select>
-                </div>
-            </div>
-            <div layout="row" layout-wrap layout-margin>
-                <div flex>
-                    <md-select name="status" placeholder="Status" ng-model="addTask.status" style="min-width: 200px;">
-                        <md-option ng-repeat="status in states" value="{{status.id}}">{{status.name}}</md-option>
-                    </md-select>
-                </div>
-                <div flex>
-                    <md-select name="uom" placeholder="Unit of measure" ng-model="addTask.uom" style="min-width: 200px;">
-                        <md-option ng-repeat="uom in unitsOfMeasures" value="{{uom.id}}">{{uom.name}}</md-option>
+                    <md-select name="parent_task" placeholder="Parent task" ng-model="addTask.parent_task" style="min-width: 200px;">
+                        <md-option ng-repeat="parent_task in object | unique: 'id'" value="{{parent_task.id}}">{{parent_task.task_name}}</md-option>
                     </md-select>
                 </div>
             </div>
             <div layout="row" layout-wrap layout-margin>
                 <div flex>
                     <md-input-container>
-                        <label>Planed units</label>
-                        <input ng-model="addTask.planed_units">
+                        <label>Description</label>
+                        <input type="text" class="note" ng-model="addTask.description">
                     </md-input-container>
                 </div>
-                <div flex>
-                    <md-input-container>
-                        <label>Billed hours</label>
-                        <input ng-model="addTask.billed_hours">
-                    </md-input-container>
-                </div>
-            </div>
-            <div layout="row" layout-wrap layout-margin>
-                <div flex="10" layout layout-align="center center">
-                    <span class="md-body-1">Completed</span>
-                </div>
-                <md-slider flex class="md-primary" md-discrete ng-model="addTask.percent_completed" step="20" min="0" max="100" aria-label="rating">
-                </md-slider>
-            </div>
-            <div layout="row" layout-wrap layout-margin>
-                <md-input-container>
-                    <label>Description</label>
-                    <input type="text" class="note" ng-model="addTask.note">
-                </md-input-container>
             </div>
             <div layout="row" layout-wrap layout-margin>
                 <div flex>
                     <md-input-container>
-                        <label>Start date</label>
-                        <input type="text" ng-model="addTask.start_date">
-                    </md-input-container>
-                </div>
-                <div flex>
-                    <md-input-container>
-                        <label>End date</label>
-                        <input type="text" ng-model="addTask.end_date">
+                        <label>Task specifics</label>
+                        <input type="text" class="note" ng-model="addTask.task_specifics">
                     </md-input-container>
                 </div>
             </div>
+            <!-- /////////////////////////////////// -->
+
+            <!-- Nature of problem-->
+
+
+
+            <!-- //////////////////////////////////-->
+
             <div layout="row" layout-wrap layout-margin>
-                <pre>{{taskAdd | json}}</pre>
+                <pre>{{addTask | json}}</pre>
             </div>
         </md-dialog-content>
         <div class="md-actions" layout="row">
@@ -97,5 +72,3 @@
         </div>
     </form>
 </md-dialog>
-
-

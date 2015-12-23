@@ -7,12 +7,12 @@ nav .menu-button {
 
 .logo {
 	padding-top: 90px;
-	background: #F57C00;
-	width: 304px;
+	background: #1976D2;
+	width: 230px;
 	height: 300%;
 	margin-left: -16px;
 	text-align: left;
-	padding-left: 60px;
+	padding-left: 30px;
 }
 
 .logo img{
@@ -29,18 +29,31 @@ nav .menu-button {
 
 .main-logo {
 	text-align: center;
-	width: 180px;
+	width: 137px;
 	margin-right: -16px;
 	background-color: #B6B6B6;
-	padding-top: 70px;
+	padding-top: 75px;
 	height: 300%;
 }
 
 .main-logo p {
 	font-size: 17px;
-	margin-bottom: 5px;
+	margin-top: 0px;
 }
 
 .main-logo img{
 
+}
+
+md-toolbar.md-tall {
+	height: 128px;
+	min-height: 128px;
+	max-height: 128px;
+	color: white;
+}
+
+md-sidenav.md-locked-open {
+	width: 230px;
+	min-width: 207px;
+	max-width: 304px;
 }

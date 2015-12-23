@@ -11,6 +11,7 @@ app.directive('mainMenu', function() {
             menu: '='
         },
         replace: true,
+        controller: "sidebarCtrl",
         templateUrl: 'views/partials/directives/mainMenu.html'
     };
 });

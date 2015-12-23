@@ -16,67 +16,41 @@ app.directive('taskBox', function() {
     };
 });
 
-app.controller('taskEditCtrl', function($scope, $mdDialog){
+app.controller('taskEditCtrl', [ '$scope', '$mdDialog', 'myHttp', '$state', 'myDialog', 'myPopup' ,function($scope, $mdDialog, myHttp, $state, myDialog, myPopup){
+
+    $scope.hideSubtasks = function(subtask){
+      // console.log(subtask);
+        for(var t in subtask){
+          $("#subtask-"+subtask[t].id).toggle();
+        }
+    }
+
+    $scope.minDate = new Date();
 
     //EDIT
-    $scope.showEditTask = function(ev, task) {
+    $scope.editTaskDialog = function(event, dialogName, data){
 
-        $scope.taskEdit = task;
+        data.end_time = new Date(data.end_time);
 
-        $mdDialog.show({
-            controller: DialogController,
-            scope: $scope.$new(),
-            templateUrl: 'views/partials/dialogs/editTaskDialog.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-        })
-            .then(function(answer) {
-                console.log('You chose "' + answer + '".');
-            }, function() {
-                console.log('You cancelled the dialog.');
-            });
+        $scope.editTask = data;
+
+        myDialog(event, dialogName, $scope, function(){
+            myHttp($scope, {method: 'PUT', url: 'api/v1/wh/tasks'}, $scope.editTask);
+
+            myPopup('Task is edited');
+        });
     };
 
     //DELETE
-    $scope.deleteTask = function(id){
+    $scope.deleteTaskDialog = function(event, dialogName, data){
 
-        var del = {
-            method: 'DELETE',
-            url: url +  'api/v1/tasks/'+ id,
-            async: true,
-            crossDomain: true,
-            dataType: "jsonp",
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            }
-        };
+        $scope.deleteTask = data;
 
-        $http(del).success(function(){
-            console.log("Task deleted");
-        }).error(function(){
-            alert("Failed");
+        myDialog(event, dialogName, $scope, function(){
+            myHttp($scope, {method: 'DELETE', url: 'api/v1/wh/tasks/?id=' + $scope.deleteTask.id});
+
+            myPopup('Task is deleted');
         });
-
     };
 
-    $scope.showDeleteTask = function(ev, task) {
-
-        $scope.taskDelete = task;
-
-        $mdDialog.show({
-            controller: DialogController,
-            scope: $scope.$new(),
-            templateUrl: 'views/partials/dialogs/deleteTaskDialog.html',
-            parent: angular.element(document.body),
-            targetEvent: ev
-        })
-            .then(function(answer) {
-                if(answer == "yes"){
-                    $scope.deleteTask($scope.taskDelete.id);
-                }
-            }, function() {
-                console.log('You cancelled the dialog.');
-            });
-    };
-
-});
+}]);
