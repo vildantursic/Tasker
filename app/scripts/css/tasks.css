@@ -38,3 +38,10 @@
 	margin-top: -15px !important;
 	background-color: #ECECEC !important;
 }
+@media (max-width: 800px) {
+	.sub-task {
+		margin-left: 20px !important;
+		margin-top: -15px !important;
+		background-color: #ECECEC !important;
+	}
+}

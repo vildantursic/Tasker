@@ -1,34 +1,34 @@
 .projectlist md-whiteframe {
 	background: #448AFF;
-  	margin: 20px;
-	height: 200px;
+	margin: 20px;
+	height: 170px;
 	width: 90%;
 }
 
 .projectlist .project {
-  	width: 100%;
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
-  	display: inline-block;
+	display: inline-block;
 }
 
 .projectlist .content {
 	font-size: 17px;
 	width: 100%;
-	height: 75%;
+	height: 70%;
 	padding: 10px;
 	color: white;
 }
 .projectlist .content>div{
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 .projectlist .content .name{
 	font-size: 22px;
 }
 
 .projectlist .buttons {
-  width: 100%;
-	height: 25%;
+	width: 100%;
+	height: 30%;
 	background-color: white;
 }
 
